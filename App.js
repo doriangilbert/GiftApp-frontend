@@ -1,3 +1,5 @@
+//memo https://www.youtube.com/watch?v=Y7rbJRjaYCY
+
 // Core https://reactnative.dev/docs/
 import React from 'react';
 import { } from 'react-native';
@@ -26,7 +28,7 @@ function InitialTabs(){
       <Stack.Navigator initialRouteName="Page initiale">
         <Stack.Screen name="Page initiale" component={Page_initiale} />
         <Stack.Screen name="Connexion" component={Connexion} />
-        <Stack.Screen name="Inscription" component={Inscription} />
+        <Stack.Screen name="Inscription" component={Inscription} />     
       </Stack.Navigator>
   );
 }
@@ -34,8 +36,8 @@ function InitialTabs(){
 function BottomTabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Page initiale" component={Page_initiale} />
       <Tab.Screen name="Acceuil" component={Accueil} />
+      <Tab.Screen name="Profil" component={Profil} />
     </Tab.Navigator>
   );
 }
