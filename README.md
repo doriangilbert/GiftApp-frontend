@@ -16,6 +16,7 @@ Clone the repository and install the dependencies
 git clone https://github.com/ProjectGiftApp/frontend
 cd frontend
 npm i
+yarn
 ```
 
 And that's it!
