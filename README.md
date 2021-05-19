@@ -16,12 +16,13 @@ Clone the repository and install the dependencies
 git clone https://github.com/ProjectGiftApp/frontend
 cd frontend
 npm i
-yarn install
 ```
 
 And that's it!
 
 # How to start the application 
 ```bash
-yarn start
+expo start
 ```
+Than pressed w to enter in web browser visualisation
+Or you can scan the QR code with Expo GO on Android or Camera App on IOS
