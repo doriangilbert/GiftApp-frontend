@@ -2,7 +2,7 @@
 
 // Core https://reactnative.dev/docs/
 import React from 'react';
-import { } from 'react-native';
+import {  } from 'react-native';
 
 //navigation https://reactnavigation.org/docs/
 import 'react-native-gesture-handler';
@@ -13,19 +13,18 @@ import style from './style';
 
 //Routes 
 import InitialTabs from './routes/InitialTabs';
-import BottomTabs from './routes/InitialTabs';
+import BottomTabs from './routes/BottomTabs';
 
 
 //App
 
 export default function App() {
   if (true) {
-    return (
-      <NavigationContainer>
-        <BottomTabs />
-      </NavigationContainer>
-
-    );
+      return (
+        <NavigationContainer>
+          <BottomTabs />
+        </NavigationContainer>
+      );
   } else {
     return (
       <NavigationContainer>
