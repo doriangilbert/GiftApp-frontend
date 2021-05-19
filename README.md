@@ -1,8 +1,8 @@
 # Front End of GiftApp Application
 
 # How to install
-Install nodejs and npm : https://nodejs.org/en/
-Install yarn : 
+Install nodejs and npm : https://nodejs.org/en/  
+Install yarn :
 ```bash
 $ npm install --global yarn
 ```
