@@ -1,12 +1,16 @@
+//core
 import React from 'react';
 import { Text, View, Button } from 'react-native';
+
+//style
+import style from '../style';
 
 export default class Page_initale extends React.Component {
 
 
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={style.view}>
         <Text>Page Initiale</Text>
         <Button
           title="Connexion"

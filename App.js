@@ -8,11 +8,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+//style
+import style from './style';
+
 //views 
-import Page_initiale from './views/page_initiale';
-import Inscription from './views/inscription';
-import Connexion from './views/connexion';
-import Accueil from './views/acceuil';
+import Page_initiale from './views/Page_initiale';
+import Inscription from './views/Inscription';
+import Connexion from './views/Connexion';
+import Accueil from './views/Acceuil';
 
 const Tab = createBottomTabNavigator();
 

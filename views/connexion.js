@@ -1,10 +1,14 @@
+//core
 import React from 'react';
 import { Text, View, Button } from 'react-native';
+
+//style
+import style from '../style';
 
 export default class Connexion extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={style.view}>
         <Text>Connexion</Text>
         <Button
           title="Valider"
