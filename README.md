@@ -1,17 +1,17 @@
-# Front End of GiftApp Application
+# Front End de l'application GiftApp
 
-# How to install
-Install nodejs and npm : https://nodejs.org/en/  
-Install yarn :
+# Comment Installer
+Installer nodejs and npm : https://nodejs.org/en/  
+Installer yarn :
 ```bash
 npm install --global yarn
 ```
-Install expo :
+Installer expo :
 ```bash
 npm install -g expo-cli
 ```
 
-Clone the repository and install the dependencies
+Cloner la repository et installer les dépendances :
 ```bash
 git clone https://github.com/ProjectGiftApp/frontend
 cd frontend
@@ -19,11 +19,13 @@ npm i
 yarn
 ```
 
-And that's it!
-
-# How to start the application 
+# Comment lancer l'application 
 ```bash
 expo start
 ```
-Than pressed w to enter in web browser visualisation
-Or you can scan the QR code with Expo GO on Android or Camera App on IOS
+Et Appuyer sur W pour acceder au rendu web de l'application / vous pouvez aussi scanner le QR code avec Expo GO sur Android et l'application caméra sur IOS
+
+Vous pouvez directeemtn lancer l'application web avec : 
+```bash
+expo start --web
+```
