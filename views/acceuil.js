@@ -1,9 +1,12 @@
 //core
-import React from 'react';
-import { Text, View, Button } from 'react-native';
+
+import { Button, Text, View } from "react-native";
+
+import React from "react";
+import style from "../style";
 
 //style
-import style from '../style';
+
 
 export default class Accueil extends React.Component {
   render() {
@@ -11,6 +14,6 @@ export default class Accueil extends React.Component {
       <View style={style.view}>
         <Text>Accueil</Text>
       </View>
-    )
+    );
   }
 }

@@ -1,9 +1,12 @@
 //core
-import React from 'react';
-import { Text, View, Button } from 'react-native';
+
+import { Button, Text, View } from "react-native";
+
+import React from "react";
+import style from "../style";
 
 //style
-import style from '../style';
+
 
 export default class Connexion extends React.Component {
   render() {
@@ -12,9 +15,9 @@ export default class Connexion extends React.Component {
         <Text>Connexion</Text>
         <Button
           title="Valider"
-          onPress={() => this.props.navigation.navigate('Acceuil')}
+          onPress={() => this.props.navigation.navigate("Acceuil")}
         />
       </View>
-    )
+    );
   }
 }

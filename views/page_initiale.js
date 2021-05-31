@@ -1,26 +1,26 @@
 //core
-import React from 'react';
-import { Text, View, Button } from 'react-native';
+
+import { Button, Text, View } from "react-native";
+
+import React from "react";
+import style from "../style";
 
 //style
-import style from '../style';
 
 export default class Page_initale extends React.Component {
-
-
   render() {
     return (
       <View style={style.view}>
         <Text>Page Initiale</Text>
         <Button
           title="Connexion"
-          onPress={() => this.props.navigation.navigate('Connexion')}
+          onPress={() => this.props.navigation.navigate("Connexion")}
         />
         <Button
           title="Inscription"
-          onPress={() => this.props.navigation.navigate('Inscription')}
+          onPress={() => this.props.navigation.navigate("Inscription")}
         />
       </View>
-    )
+    );
   }
 }
