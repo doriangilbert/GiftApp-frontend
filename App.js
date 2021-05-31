@@ -9,7 +9,7 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 
 //style
-import style from './style';
+import style from './Style';
 
 //Routes 
 import InitialTabs from './routes/InitialTabs';

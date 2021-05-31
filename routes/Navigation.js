@@ -1,3 +1,5 @@
+//La gestion de la navigation après avoir été connecté
+
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
