@@ -1,6 +1,6 @@
 //memo https://www.youtube.com/watch?v=Y7rbJRjaYCY
 
-// Core https://reactnative.dev/docs/
+//Core https://reactnative.dev/docs/
 import React from 'react';
 import { } from 'react-native';
 
@@ -15,12 +15,51 @@ import style from './style';
 import InitialTabs from './routes/InitialTabs';
 import BottomTabs from './routes/BottomTabs';
 
+//API
+const axios = require('axios');
+const co = require('./co.json');
 
 //App
 
+function connected() {
+  console.log("Connexion en cours")
+  if (co.id != 0) {
+    return co.id
+  } else {
+    let url = 'https://localhost:8000/api/connexion/';
+    //let url = "https://world.openfoodfacts.org/api/v0/product/737628064502.json";
+    let data = {
+      'mail': co.mail,
+      'mdp': co.mdp
+    };
+    let config = {
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+    };
+    axios.get(url, null, config)
+      .then(function (response) {
+        console.log(response);
+        /*
+        if (response.id) {
+          co.id = response.id;
+          return co.id;
+        } else {
+          console.error("Erreur connexion");
+          return 0;
+        }*/
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+  return 0;
+}
+
+
 export default function App() {
-  const connect = true;
-  if (connect) {
+
+  if (true) {
     return (
       <NavigationContainer>
         <BottomTabs />

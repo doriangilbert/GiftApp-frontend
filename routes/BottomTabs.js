@@ -16,5 +16,5 @@ export default class BottomTabs extends React.Component {
         <Tab.Screen name="Profil" component={Profil} />
       </Tab.Navigator>
     );
-  }
+  };
 }
