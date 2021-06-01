@@ -12,8 +12,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import style from './Style';
 
 //Routes 
-import  InitialTabs  from './routes/InitialTabs';
-import { BottomTabs } from './routes/Navigation';
+import { BottomTabs, InitialTabs } from './routes/Navigation';
 import { View } from 'react-native';
 
 

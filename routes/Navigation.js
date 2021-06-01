@@ -3,10 +3,12 @@
 import 'react-native-gesture-handler'
 import * as React from 'react'
 
-import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import PageInitiale from '../views/PageInitale';
+import Inscription from '../views/Inscription';
+import Connexion from '../views/Connexion';
 import Accueil from '../views/Accueil'
 import Profil from '../views/Profil'
 import Amis from '../views/Amis'
@@ -26,10 +28,19 @@ import AjoutCadeau from '../views/AjoutCadeau';
 
 const Tab = createBottomTabNavigator();
 
+const AccueilStack = createStackNavigator();
+const AmisStack = createStackNavigator();
+const GroupeStack = createStackNavigator();
+const InitialStack = createStackNavigator();
+
+
 export const BottomTabs = () => {
     return (
 
-    <Tab.Navigator initialRouteName="Accueil">
+    <Tab.Navigator initialRouteName="Accueil"
+        tabBarOptions={{}}
+        screenOptions={{}}
+    >
         <Tab.Screen name="Groupes" component={GroupeStackScreen} />
         <Tab.Screen name="Accueil" component={AccueilStackScreen} />
         <Tab.Screen name="Amis" component={AmisStackScreen} />
@@ -37,10 +48,6 @@ export const BottomTabs = () => {
 
     ); 
 }
-
-const AccueilStack = createStackNavigator();
-const AmisStack = createStackNavigator();
-const GroupeStack = createStackNavigator();
 
 export const AccueilStackScreen = () => {
     return(
@@ -150,5 +157,15 @@ export const GroupeStackScreen = () => {
             /> 
             
         </GroupeStack.Navigator>
+    );
+}
+
+export const InitialTabs = () => {
+    return (
+        <InitialStack.Navigator initialRouteName="Page initiale">
+            <InitialStack.Screen name="Page initiale" component={PageInitiale} />
+            <InitialStack.Screen name="Connexion" component={Connexion} />
+            <InitialStack.Screen name="Inscription" component={Inscription} />
+        </InitialStack.Navigator>
     );
 }
