@@ -9,11 +9,31 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 
 //style
-import style from './style';
+import style from './Style';
 
 //Routes 
-import InitialTabs from './routes/InitialTabs';
-import BottomTabs from './routes/BottomTabs';
+import { BottomTabs, InitialTabs } from './routes/Navigation';
+import { View } from 'react-native';
+
+
+export default function App() {
+
+  if (true) {
+    return (
+      <NavigationContainer>
+        <BottomTabs/>
+      </NavigationContainer>
+    );
+  } else {
+    return(
+    <NavigationContainer>
+      <InitialTabs/>
+    </NavigationContainer>
+    );
+  }
+}
+
+
 
 //API
 const axios = require('axios');
@@ -57,19 +77,4 @@ function connected() {
 }
 
 
-export default function App() {
 
-  if (false) {
-    return (
-      <NavigationContainer>
-        <BottomTabs />
-      </NavigationContainer>
-    );
-  } else {
-    return (
-      <NavigationContainer>
-        <InitialTabs />
-      </NavigationContainer>
-    );
-  }
-}

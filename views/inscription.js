@@ -3,7 +3,7 @@ import React from 'react';
 import { Text, View, Button } from 'react-native';
 
 //style
-import style from '../style';
+import style from '../Style';
 
 export default class Inscription extends React.Component {
   render() {
