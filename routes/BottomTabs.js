@@ -1,6 +1,7 @@
 import React from 'react';
-import { View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import {AccueilStackScreen} from './Navigation';
 
 //views 
 import Accueil from '../views/Accueil';
@@ -8,13 +9,16 @@ import Profil from '../views/Profil';
 
 const Tab = createBottomTabNavigator();
 
-export default class BottomTabs extends React.Component {
-  render() {
+export default function BottomTabs()  {
+  
     return (
-      <Tab.Navigator>
-        <Tab.Screen name="Accueil" component={Accueil} />
-        <Tab.Screen name="Profil" component={Profil} />
-      </Tab.Navigator>
+      <NavigationContainer>
+        <Tab.Navigator>
+          {/*<Tab.Screen name="Groupes" component={Navigation} />*/}
+          <Tab.Screen name="Accueil" component={AccueilStackScreen} />
+          {/*<Tab.Screen name="Amis" component={Navigation} />*/}
+        </Tab.Navigator>
+      </NavigationContainer>
     );
-  };
+ 
 }

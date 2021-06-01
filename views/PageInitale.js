@@ -5,7 +5,7 @@ import { Text, View, Button } from 'react-native';
 //style
 import style from '../Style';
 
-export default class Page_initale extends React.Component {
+export default class PageInitale extends React.Component {
 
 
   render() {

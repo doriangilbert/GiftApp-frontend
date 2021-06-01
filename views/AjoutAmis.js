@@ -5,11 +5,11 @@ import { Text, View } from 'react-native';
 //style
 import style from '../Style';
 
-export default class Parametres extends React.Component {
+export default class AjoutAmis extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Text>Parametres</Text>
+        <Text>AjoutAmis</Text>
       </View>
     )
   }

@@ -13,7 +13,23 @@ import style from './Style';
 
 //Routes 
 import InitialTabs from './routes/InitialTabs';
+import {AccueilStackScreen} from './routes/Navigation';
 import BottomTabs from './routes/BottomTabs';
+import { View } from 'react-native';
+
+
+export default function App() {
+
+  if (true) {
+    return (
+      <View></View>
+    );
+  } else {
+    
+  }
+}
+
+
 
 //API
 const axios = require('axios');
@@ -57,19 +73,4 @@ function connected() {
 }
 
 
-export default function App() {
 
-  if (false) {
-    return (
-      <NavigationContainer>
-        <BottomTabs />
-      </NavigationContainer>
-    );
-  } else {
-    return (
-      <NavigationContainer>
-        <InitialTabs />
-      </NavigationContainer>
-    );
-  }
-}
