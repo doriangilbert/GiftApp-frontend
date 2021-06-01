@@ -12,9 +12,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import style from './Style';
 
 //Routes 
-import InitialTabs from './routes/InitialTabs';
-import {AccueilStackScreen} from './routes/Navigation';
-import BottomTabs from './routes/BottomTabs';
+import  InitialTabs  from './routes/InitialTabs';
+import { BottomTabs } from './routes/Navigation';
 import { View } from 'react-native';
 
 
@@ -22,10 +21,16 @@ export default function App() {
 
   if (true) {
     return (
-      <View></View>
+      <NavigationContainer>
+        <BottomTabs/>
+      </NavigationContainer>
     );
   } else {
-    
+    return(
+    <NavigationContainer>
+      <InitialTabs/>
+    </NavigationContainer>
+    );
   }
 }
 
