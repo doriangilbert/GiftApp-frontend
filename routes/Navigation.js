@@ -30,9 +30,9 @@ export const BottomTabs = () => {
     return (
 
     <Tab.Navigator initialRouteName="Accueil">
-        <Tab.Screen name="Groupes" component={MesGroupes} />
+        <Tab.Screen name="Groupes" component={GroupeStackScreen} />
         <Tab.Screen name="Accueil" component={AccueilStackScreen} />
-        <Tab.Screen name="Amis" component={Amis} />
+        <Tab.Screen name="Amis" component={AmisStackScreen} />
     </Tab.Navigator>
 
     ); 
