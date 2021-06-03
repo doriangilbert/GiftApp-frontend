@@ -1,6 +1,7 @@
 //core
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, Image } from 'react-native';
+import { BottomSocial } from '../Components/BottomSocial';
 
 //style
 import style from '../Style';
@@ -12,7 +13,7 @@ export default class PageInitale extends React.Component {
     return (
       <View style={style.view}>
 
-        
+
 
         <View style={style.btn_style}>
           <Button
@@ -30,6 +31,8 @@ export default class PageInitale extends React.Component {
           />
         </View>
         
+        <BottomSocial/>
+
       </View>
     )
   }
