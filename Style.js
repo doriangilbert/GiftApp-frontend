@@ -49,3 +49,6 @@ export default StyleSheet.create({
         resizeMode:"center",
     }
 })
+
+
+export const rose_main = "#FF8787"
