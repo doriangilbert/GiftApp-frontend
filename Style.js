@@ -3,17 +3,16 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     view: { 
         flex: 1, 
-        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor:"#FFFCF3"
     },
     btn_style:{
-        width:"30%",
-        borderRadius:1000,
+        width:"40%",
+        borderRadius:100,
         overflow:'hidden',
         color:"#FF8787",
-        marginBottom:10,
-        marginTop:10
+        marginBottom:15,
+        marginTop:15
     },
     footerSocial:{
         flex:1,
@@ -29,7 +28,6 @@ export default StyleSheet.create({
         flexDirection:"row",
     },
     elementSocial:{
-        backgroundColor:"green",
         position:"relative",
         width:50,
         height:50, 
@@ -43,8 +41,11 @@ export default StyleSheet.create({
         justifyContent:"center"
     },
     logo:{
-        height:200,
-        width:200,
+        position:'relative',
+        marginTop:50,
+        marginBottom:25,
+        height:300,
+        width:300,
         resizeMode:"center",
     }
 })
