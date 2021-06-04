@@ -30,7 +30,7 @@ export default class PageInitale extends React.Component {
             onPress={() => this.props.navigation.navigate('Inscription')}
           />
         </View>
-        
+
         <BottomSocial/>
 
       </View>
