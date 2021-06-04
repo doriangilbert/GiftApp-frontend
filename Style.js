@@ -1,14 +1,19 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
+<<<<<<< HEAD
     view: {
         flex: 1,
+=======
+    view: { 
+        flex: 1, 
+>>>>>>> daniel
         alignItems: 'center',
         backgroundColor:"#FFFCF3"
     },
     btn_style:{
-        width:"30%",
-        borderRadius:1000,
+        width:"40%",
+        borderRadius:100,
         overflow:'hidden',
         color:"#FF8787",
         marginBottom:15,
@@ -41,6 +46,12 @@ export default StyleSheet.create({
         justifyContent:"center"
     },
     logo:{
+<<<<<<< HEAD
+=======
+        position:'relative',
+        marginTop:50,
+        marginBottom:25,
+>>>>>>> daniel
         height:300,
         width:300,
         resizeMode:"center",
@@ -48,3 +59,9 @@ export default StyleSheet.create({
         marginBottom:25
     }
 })
+<<<<<<< HEAD
+=======
+
+
+export const rose_main = "#FF8787"
+>>>>>>> daniel
