@@ -13,7 +13,7 @@ export default class PageInitale extends React.Component {
     return (
       <View style={style.view}>
 
-
+        <Image source={require("../assets/logo_large.png")} style={style.logo} />
 
         <View style={style.btn_style}>
           <Button
