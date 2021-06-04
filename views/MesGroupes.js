@@ -29,15 +29,15 @@ const Item = ({ title }) => (
     />
     <Text style={style.title}>{title}</Text>
     <Image
-      style={style.validation}
+      style={style.confirm}
       source={{
-        uri: require("../assets/check-solid.svg"),
+        uri: require("../assets/confirm.svg"),
       }}
     />
     <Image
-      style={style.validation}
+      style={style.cancel}
       source={{
-        uri: require("../assets/times-solid.svg"),
+        uri: require("../assets/cancel.svg"),
       }}
     />
   </View>
@@ -68,13 +68,16 @@ export default class MesGroupes extends React.Component {
 const style = {
   view: { 
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: "#FEFCF3"
   },
   item: {
     backgroundColor: "#FEFCF3",
-    padding: 20,
-    marginVertical: 8,
-    flexDirection: "row"
+    padding: 10,
+    marginVertical: 10,
+    flexDirection: "row",
+    alignItems: 'center',
   },
   header: {
     fontSize: 24,
@@ -88,8 +91,12 @@ const style = {
     width: 75,
     height: 75
   },
-  validation: {
-    width: 64,
-    height: 64
+  confirm: {
+    width: 39,
+    height: 39
+  },
+  cancel: {
+    width: 32,
+    height: 32
   }
 };
