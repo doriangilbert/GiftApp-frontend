@@ -1,9 +1,8 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-    view: { 
-        flex: 1, 
-        justifyContent: 'center',
+    view: {
+        flex: 1,
         alignItems: 'center',
         backgroundColor:"#FFFCF3"
     },
@@ -12,8 +11,8 @@ export default StyleSheet.create({
         borderRadius:1000,
         overflow:'hidden',
         color:"#FF8787",
-        marginBottom:10,
-        marginTop:10
+        marginBottom:15,
+        marginTop:15
     },
     footerSocial:{
         flex:1,
@@ -29,10 +28,9 @@ export default StyleSheet.create({
         flexDirection:"row",
     },
     elementSocial:{
-        backgroundColor:"green",
         position:"relative",
         width:50,
-        height:50, 
+        height:50,
         marginLeft:"5%",
         marginRight:"5%",
         top:10
@@ -43,8 +41,10 @@ export default StyleSheet.create({
         justifyContent:"center"
     },
     logo:{
-        height:200,
-        width:200,
+        height:300,
+        width:300,
         resizeMode:"center",
+        marginTop:60,
+        marginBottom:25
     }
 })
