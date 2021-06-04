@@ -41,5 +41,10 @@ export default StyleSheet.create({
         flex:1,
         resizeMode:'cover',
         justifyContent:"center"
+    },
+    logo:{
+        height:200,
+        width:200,
+        resizeMode:"center",
     }
 })
