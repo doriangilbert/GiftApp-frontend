@@ -18,7 +18,7 @@ import { View } from 'react-native';
 
 export default function App() {
 
-  if (true) {
+  if (false) {
     return (
       <NavigationContainer>
         <BottomTabs/>

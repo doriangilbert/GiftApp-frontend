@@ -54,11 +54,13 @@ export const AccueilStackScreen = () => {
         
         <AccueilStack.Navigator
             initialRouteName="Accueil"
+            
         >
 
             <AccueilStack.Screen
                 name="Accueil"
                 component={Accueil}
+                
             />
             
             <AccueilStack.Screen
@@ -163,9 +165,25 @@ export const GroupeStackScreen = () => {
 export const InitialTabs = () => {
     return (
         <InitialStack.Navigator initialRouteName="Page initiale">
-            <InitialStack.Screen name="Page initiale" component={PageInitiale} />
-            <InitialStack.Screen name="Connexion" component={Connexion} />
-            <InitialStack.Screen name="Inscription" component={Inscription} />
+
+            <InitialStack.Screen 
+                name="Page initiale" 
+                component={PageInitiale} 
+                options={{headerShown:false}}
+            />
+
+            <InitialStack.Screen 
+                name="Connexion"
+                component={Connexion} 
+                options={{headerShown:false}}
+            />
+
+            <InitialStack.Screen 
+                name="Inscription" 
+                component={Inscription} 
+                options={{headerShown:false}}
+            />
+
         </InitialStack.Navigator>
     );
 }
