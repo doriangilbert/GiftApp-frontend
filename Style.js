@@ -47,8 +47,40 @@ export default StyleSheet.create({
         height:300,
         width:300,
         resizeMode:"center",
+<<<<<<< HEAD
         marginTop:60,
         marginBottom:25
+=======
+    },
+    photo:{
+        position:'relative',
+        resizeMode:"center",
+        height:100
+    },
+    nom_prenom_M:{
+        fontSize:24,
+        margin:10
+    },
+    nom_prenom_L:{
+        fontSize:26
+    },
+    nom_prenom_S:{
+        fontSize:17
+    },
+    desc_profil:{
+        width:"70%",
+        margin:30
+    },
+    mail:{
+        fontWeight:'bold',
+        fontSize:17,
+        margin:10
+    },
+    btn_profil:{
+        flex:1,
+        justifyContent:'flex-end',
+        marginBottom:10
+>>>>>>> daniel
     }
 })
 

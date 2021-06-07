@@ -9,7 +9,7 @@ export default class DetailCadeau extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Text>DetailCadeau</Text>
+        <Text style={{position:'absolute',top:50}}>DetailCadeau</Text>
       </View>
     )
   }
