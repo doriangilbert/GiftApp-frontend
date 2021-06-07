@@ -9,7 +9,7 @@ export default class AjoutCadeau extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Text>AjoutCadeau</Text>
+        <Text style={{position:'absolute',top:50}}>AjoutCadeau</Text>
       </View>
     )
   }

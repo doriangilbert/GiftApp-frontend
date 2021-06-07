@@ -9,7 +9,7 @@ export default class Groupe extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Text>Groupe</Text>
+        <Text style={{position:'absolute',top:50}}>Groupe</Text>
       </View>
     )
   }

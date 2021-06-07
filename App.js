@@ -44,6 +44,7 @@ const co = require('./co.json');
 function connected() {
   console.log("Connexion en cours")
   if (co.id != 0) {
+    
     return co.id
   } else {
     let url = 'https://localhost:8000/api/connexion/';

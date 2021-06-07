@@ -9,7 +9,7 @@ export default class Parametres extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Text>Parametres</Text>
+        <Text style={{position:'absolute',top:50}}>Parametres</Text>
       </View>
     )
   }
