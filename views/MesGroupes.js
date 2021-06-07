@@ -10,14 +10,40 @@ import React from 'react';
 
 const DATA = [
   {
+    index: 0,
     title: "Mes Invitations :",
     data: ["Groupe", "Groupe"]
   },
   {
+    index: 1,
     title: "Mes Groupes :",
     data: ["Groupe", "Groupe", "Groupe", "Groupe", "Groupe", "Groupe"]
   }
 ];
+
+const Item1 = ({ title }) => (
+  <View style={style.item}>
+    <Image
+      style={style.photo}
+      source={{
+        uri: require("../assets/photo.png"),
+      }}
+    />
+    <Text style={style.title}>{title}</Text>
+    <Image
+      style={style.confirm}
+      source={{
+        uri: require("../assets/confirm.svg"),
+      }}
+    />
+    <Image
+      style={style.cancel}
+      source={{
+        uri: require("../assets/cancel.svg"),
+      }}
+    />
+  </View>
+);
 
 const Item = ({ title }) => (
   <View style={style.item}>
@@ -28,18 +54,6 @@ const Item = ({ title }) => (
       }}
     />
     <Text style={style.title}>{title}</Text>
-    <Image
-      style={style.validation}
-      source={{
-        uri: require("../assets/check-solid.svg"),
-      }}
-    />
-    <Image
-      style={style.validation}
-      source={{
-        uri: require("../assets/times-solid.svg"),
-      }}
-    />
   </View>
 );
 export default class MesGroupes extends React.Component {
@@ -55,7 +69,14 @@ export default class MesGroupes extends React.Component {
         <SectionList
           sections={DATA}
           keyExtractor={(item, index) => item + index}
-          renderItem={({ item }) => <Item title={item} />}
+          renderItem={({ section, item }) => {
+            if (section.index === 0) {
+              return <Item1 title={item} />
+            }
+            else {
+              return <Item title={item} />
+            }
+          }}
           renderSectionHeader={({ section: { title } }) => (
             <Text style={style.header}>{title}</Text>
           )}
@@ -68,13 +89,16 @@ export default class MesGroupes extends React.Component {
 const style = {
   view: { 
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: "#FEFCF3"
   },
   item: {
     backgroundColor: "#FEFCF3",
-    padding: 20,
-    marginVertical: 8,
-    flexDirection: "row"
+    padding: 10,
+    marginVertical: 10,
+    flexDirection: "row",
+    alignItems: 'center',
   },
   header: {
     fontSize: 24,
@@ -88,8 +112,12 @@ const style = {
     width: 75,
     height: 75
   },
-  validation: {
-    width: 64,
-    height: 64
+  confirm: {
+    width: 39,
+    height: 39
+  },
+  cancel: {
+    width: 32,
+    height: 32
   }
 };
