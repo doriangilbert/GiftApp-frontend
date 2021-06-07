@@ -8,7 +8,7 @@ import style from '../Style';
 export default function Accueil(props) {
     return (
       <View style={style.view}>
-        <Text>Accueil</Text>
+        <Text style={{marginTop:100}}>Accueil</Text>
       </View>
     )
 }

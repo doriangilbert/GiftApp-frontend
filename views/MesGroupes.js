@@ -23,22 +23,16 @@ const Item = ({ title }) => (
   <View style={style.item}>
     <Image
       style={style.photo}
-      source={{
-        uri: require("../assets/photo.png"),
-      }}
+      source={require("../assets/photo.png")}
     />
     <Text style={style.title}>{title}</Text>
     <Image
       style={style.confirm}
-      source={{
-        uri: require("../assets/confirm.svg"),
-      }}
+      source={ require("../assets/confirm.svg")}
     />
     <Image
       style={style.cancel}
-      source={{
-        uri: require("../assets/cancel.svg"),
-      }}
+      source={ require("../assets/cancel.svg")}
     />
   </View>
 );

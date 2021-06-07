@@ -39,7 +39,7 @@ export const BottomTabs = () => {
 
     <Tab.Navigator initialRouteName="Accueil"
         tabBarOptions={{}}
-        screenOptions={{}}
+        screenOptions={{headerShown:false}}
     >
         <Tab.Screen name="Groupes" component={GroupeStackScreen} />
         <Tab.Screen name="Accueil" component={AccueilStackScreen} />
@@ -54,7 +54,7 @@ export const AccueilStackScreen = () => {
         
         <AccueilStack.Navigator
             initialRouteName="Accueil"
-            
+            screenOptions={{headerShown:false}}
         >
 
             <AccueilStack.Screen
@@ -86,6 +86,7 @@ export const AmisStackScreen = () => {
     return(
         <AmisStack.Navigator
             initialRouteName="Amis"
+            screenOptions={{headerShown:false}}
         >
 
             <AmisStack.Screen
@@ -111,6 +112,7 @@ export const GroupeStackScreen = () => {
     return(
         <GroupeStack.Navigator
             initialRouteName="MesGroupes"
+            screenOptions={{headerShown:false}}
         >
             
             <GroupeStack.Screen
@@ -164,24 +166,21 @@ export const GroupeStackScreen = () => {
 
 export const InitialTabs = () => {
     return (
-        <InitialStack.Navigator initialRouteName="Page initiale">
+        <InitialStack.Navigator initialRouteName="Page initiale" screenOptions={{headerShown:false}}>
 
             <InitialStack.Screen 
                 name="Page initiale" 
                 component={PageInitiale} 
-                options={{headerShown:false}}
             />
 
             <InitialStack.Screen 
                 name="Connexion"
                 component={Connexion} 
-                options={{headerShown:false}}
             />
 
             <InitialStack.Screen 
                 name="Inscription" 
                 component={Inscription} 
-                options={{headerShown:false}}
             />
 
         </InitialStack.Navigator>
