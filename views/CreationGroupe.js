@@ -9,7 +9,7 @@ export default class CreationGroupe extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Text>CreationGroupe</Text>
+        <Text style={{position:'absolute',top:50}}>CreationGroupe</Text>
       </View>
     )
   }

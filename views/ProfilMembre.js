@@ -9,7 +9,7 @@ export default class ProfilMembre extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Text>ProfilMembre</Text>
+        <Text style={{position:'absolute',top:50}}>ProfilMembre</Text>
       </View>
     )
   }

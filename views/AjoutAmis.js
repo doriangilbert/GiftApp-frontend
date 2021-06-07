@@ -9,7 +9,10 @@ export default class AjoutAmis extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Text>AjoutAmis</Text>
+        <Text style={{position:'absolute',top:50}}>AjoutAmis</Text>
+
+        
+
       </View>
     )
   }

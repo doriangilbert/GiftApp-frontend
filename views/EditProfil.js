@@ -9,7 +9,7 @@ export default class EditProfil extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Text>EditProfil</Text>
+        <Text style={{position:'absolute',top:50}}>EditProfil</Text>
       </View>
     )
   }
