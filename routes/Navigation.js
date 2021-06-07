@@ -59,8 +59,7 @@ export const AccueilStackScreen = () => {
 
             <AccueilStack.Screen
                 name="Accueil"
-                component={Accueil}
-                
+                component={Accueil}            
             />
             
             <AccueilStack.Screen

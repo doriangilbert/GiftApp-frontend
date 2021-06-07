@@ -47,6 +47,10 @@ export default StyleSheet.create({
         height:300,
         width:300,
         resizeMode:"center",
+    },
+    photo:{
+        resizeMode:"contain",
+        height:100
     }
 })
 
