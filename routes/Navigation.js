@@ -4,7 +4,7 @@ import 'react-native-gesture-handler'
 import * as React from 'react'
 
 import { createStackNavigator } from '@react-navigation/stack'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import PageInitiale from '../views/PageInitale';
 import Inscription from '../views/Inscription';
@@ -25,6 +25,13 @@ import AjoutMembreInactif from '../views/AjoutMembreInactif';
 import ProfilMembre from '../views/ProfilMembre';
 import DetailCadeau from '../views/DetailCadeau';
 import AjoutCadeau from '../views/AjoutCadeau';
+import { View } from 'react-native';
+
+import { MaterialIcons } from '@expo/vector-icons'; 
+import { Entypo } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+import { rose_main } from '../Style';
 
 const Tab = createBottomTabNavigator();
 
@@ -38,12 +45,30 @@ export const BottomTabs = () => {
     return (
 
     <Tab.Navigator initialRouteName="Accueil"
-        tabBarOptions={{}}
-        screenOptions={{headerShown:false}}
+        tabBarOptions={{showLabel:false, style:{backgroundColor:rose_main}}}
+        screenOptions={{headerShown:false}}       
     >
-        <Tab.Screen name="Groupes" component={GroupeStackScreen} />
-        <Tab.Screen name="Accueil" component={AccueilStackScreen} />
-        <Tab.Screen name="Amis" component={AmisStackScreen} />
+        <Tab.Screen name="Groupes" component={GroupeStackScreen} options={{
+            tabBarIcon:({focused}) =>(
+                <View>
+                    <MaterialIcons name="groups" size={30} style={{color:focused?"white":"#D74848"}} />
+                </View>
+            )
+            }}/>
+        <Tab.Screen name="Accueil" component={AccueilStackScreen} options={{
+            tabBarIcon:({focused}) =>(
+                <View>
+                    <Entypo name="home" size={24} style={{color:focused?"white":"#D74848"}} />
+                </View>
+            )
+            }}/>
+        <Tab.Screen name="Amis" component={AmisStackScreen} options={{
+            tabBarIcon:({focused}) =>(
+                <View>
+                    <FontAwesome5 name="user-friends" size={24} style={{color:focused?"white":"#D74848"}} />
+                </View>
+            )
+            }}/>
     </Tab.Navigator>
 
     ); 
