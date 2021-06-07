@@ -7,33 +7,9 @@ import { BottomSocial } from '../Components/BottomSocial';
 import style from '../Style';
 
 export default class PageInitale extends React.Component {
-
-
   render() {
     return (
       <View style={style.view}>
-<<<<<<< HEAD
-
-        <Image source={require("../assets/logo_large.png")} style={style.logo} />
-
-        <View style={style.btn_style}>
-          <Button
-            color="#FF8787"
-            title="Connexion"
-            onPress={() => this.props.navigation.navigate('Connexion')}
-          />
-        </View>
-
-        <View style={style.btn_style}>
-          <Button
-            color="#FF8787"
-            title="Inscription"
-            onPress={() => this.props.navigation.navigate('Inscription')}
-          />
-        </View>
-
-=======
-          
             <Image source={require("../assets/logo_large.png")} style={style.logo} />
 
             <View style={style.btn_style}>
@@ -51,9 +27,8 @@ export default class PageInitale extends React.Component {
                 title="Inscription"
                 onPress={() => this.props.navigation.navigate('Inscription')}
               />
-            </View>
-          
->>>>>>> daniel
+        </View>
+
         <BottomSocial/>
 
       </View>
