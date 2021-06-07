@@ -10,16 +10,18 @@ import React from 'react';
 
 const DATA = [
   {
+    index: 0,
     title: "Mes Invitations :",
     data: ["Groupe", "Groupe"]
   },
   {
+    index: 1,
     title: "Mes Groupes :",
     data: ["Groupe", "Groupe", "Groupe", "Groupe", "Groupe", "Groupe"]
   }
 ];
 
-const Item = ({ title }) => (
+const Item1 = ({ title }) => (
   <View style={style.item}>
     <Image
       style={style.photo}
@@ -42,6 +44,18 @@ const Item = ({ title }) => (
     />
   </View>
 );
+
+const Item = ({ title }) => (
+  <View style={style.item}>
+    <Image
+      style={style.photo}
+      source={{
+        uri: require("../assets/photo.png"),
+      }}
+    />
+    <Text style={style.title}>{title}</Text>
+  </View>
+);
 export default class MesGroupes extends React.Component {
   render() {
     return (
@@ -55,7 +69,14 @@ export default class MesGroupes extends React.Component {
         <SectionList
           sections={DATA}
           keyExtractor={(item, index) => item + index}
-          renderItem={({ item }) => <Item title={item} />}
+          renderItem={({ section, item }) => {
+            if (section.index === 0) {
+              return <Item1 title={item} />
+            }
+            else {
+              return <Item title={item} />
+            }
+          }}
           renderSectionHeader={({ section: { title } }) => (
             <Text style={style.header}>{title}</Text>
           )}
