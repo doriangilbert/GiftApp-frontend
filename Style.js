@@ -42,13 +42,18 @@ export default StyleSheet.create({
     },
     logo:{
         position:'relative',
-        marginTop:50,
+        marginTop:60,
         marginBottom:25,
         height:300,
         width:300,
-        resizeMode:"center",
+        resizeMode:"center"
+    },
+    logo2:{
+        position:'relative',
         marginTop:60,
-        marginBottom:25
+        height:285,
+        width:285,
+        resizeMode:"center"
     },
     photo:{
         position:'relative',
@@ -72,7 +77,8 @@ export default StyleSheet.create({
     mail:{
         fontWeight:'bold',
         fontSize:17,
-        margin:10
+        margin:10,
+        marginBottom: 15
     },
     btn_profil:{
         flex:1,
