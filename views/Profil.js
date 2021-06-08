@@ -28,19 +28,6 @@ export default class Profil extends React.Component {
           <View style={styles.button}>
               <TouchableOpacity
                   style={styles.sign}
-                  onPress={() => {this.props.navigation.navigate('Parametres')}}
-              >
-                  <LinearGradient
-                      colors={['#FF8787','#f39a9a']}
-                      style={styles.sign}
-                  >
-                      <Text style={[styles.textSign, {color:'#fff'}]}>Paramètres</Text>
-                  </LinearGradient>
-              </TouchableOpacity>
-          </View>
-          <View style={styles.button}>
-              <TouchableOpacity
-                  style={styles.sign}
                   onPress={() => {this.props.navigation.navigate('EditProfil')}}
               >
                   <LinearGradient
@@ -61,6 +48,19 @@ export default class Profil extends React.Component {
                       style={styles.sign}
                   >
                       <Text style={[styles.textSign, {color:'#fff'}]}>Déconnexion</Text>
+                  </LinearGradient>
+              </TouchableOpacity>
+          </View>
+          <View style={styles.button}>
+              <TouchableOpacity
+                  style={styles.sign}
+                  onPress={() => {this.props.navigation.navigate('Accueil')}}
+              >
+                  <LinearGradient
+                      colors={['#FF8787','#f39a9a']}
+                      style={styles.sign}
+                  >
+                      <Text style={[styles.textSign, {color:'#fff'}]}>Supprimer mon compte</Text>
                   </LinearGradient>
               </TouchableOpacity>
           </View>
