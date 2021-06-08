@@ -47,10 +47,8 @@ export default StyleSheet.create({
         height:300,
         width:300,
         resizeMode:"center",
-<<<<<<< HEAD
         marginTop:60,
         marginBottom:25
-=======
     },
     photo:{
         position:'relative',
@@ -80,7 +78,6 @@ export default StyleSheet.create({
         flex:1,
         justifyContent:'flex-end',
         marginBottom:10
->>>>>>> daniel
     }
 })
 

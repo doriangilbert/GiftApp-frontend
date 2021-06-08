@@ -11,14 +11,14 @@ import { NavigationContainer } from '@react-navigation/native';
 //style
 import style from './Style';
 
-//Routes 
+//Routes
 import { BottomTabs, InitialTabs } from './routes/Navigation';
 import { View } from 'react-native';
 
 
 export default function App() {
 
-  if (true) {
+  if (false) {
     return (
       <NavigationContainer>
         <BottomTabs/>
@@ -44,7 +44,7 @@ const co = require('./co.json');
 function connected() {
   console.log("Connexion en cours")
   if (co.id != 0) {
-    
+
     return co.id
   } else {
     let url = 'https://localhost:8000/api/connexion/';
@@ -76,6 +76,3 @@ function connected() {
   }
   return 0;
 }
-
-
-
