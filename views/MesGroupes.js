@@ -43,9 +43,7 @@ const Item = ({ title }) => (
   <View style={style.item}>
     <Image
       style={style.photo}
-      source={{
-        uri: require("../assets/photo.png"),
-      }}
+      source={ require("../assets/photo.png")}
     />
     <Text style={style.title}>{title}</Text>
   </View>
