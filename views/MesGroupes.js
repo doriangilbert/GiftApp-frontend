@@ -1,6 +1,6 @@
 //core
 
-import { Button, Image, SectionList, Text, View } from 'react-native';
+import { Button, Image, Pressable, SectionList, Text, View } from 'react-native';
 
 import React from 'react';
 
@@ -23,37 +23,45 @@ const DATA = [
 
 const Item1 = ({ title }) => (
   <View style={style.item}>
-    <Image
-      style={style.photo}
-      source={{
-        uri: require("../assets/photo.png"),
-      }}
-    />
-    <Text style={style.title}>{title}</Text>
-    <Image
-      style={style.confirm}
-      source={{
-        uri: require("../assets/confirm.svg"),
-      }}
-    />
-    <Image
-      style={style.cancel}
-      source={{
-        uri: require("../assets/cancel.svg"),
-      }}
-    />
+    <Pressable onPress={() => console.log("Profil appuyé")} style={style.profil}>
+      <Image
+        style={[style.photo, style.flexelement]}
+        source={{
+          uri: require("../assets/photo.png"),
+        }}
+      />
+      <Text style={[style.title, style.flexelement]}>{title}</Text>
+    </Pressable>
+    <Pressable onPress={() => console.log("Confirmer appuyé")}>
+      <Image
+        style={[style.confirm, style.flexelement]}
+        source={{
+          uri: require("../assets/confirm.svg"),
+        }}
+      />
+    </Pressable>
+    <Pressable onPress={() => console.log("Annuler appuyé")}>
+      <Image
+        style={[style.cancel, style.flexelement]}
+        source={{
+          uri: require("../assets/cancel.svg"),
+        }}
+      />
+    </Pressable>
   </View>
 );
 
 const Item = ({ title }) => (
   <View style={style.item}>
-    <Image
-      style={style.photo}
-      source={{
-        uri: require("../assets/photo.png"),
-      }}
-    />
-    <Text style={style.title}>{title}</Text>
+    <Pressable onPress={() => console.log("Profil appuyé")} style={style.profil}>
+      <Image
+          style={[style.photo, style.flexelement]}
+          source={{
+            uri: require("../assets/photo.png"),
+          }}
+      />
+      <Text style={[style.title, style.flexelement]}>{title}</Text>
+    </Pressable>
   </View>
 );
 export default class MesGroupes extends React.Component {
@@ -61,11 +69,11 @@ export default class MesGroupes extends React.Component {
     return (
       <View style={style.view}>
         <Button
-          onPress={console.log("Créer un groupe appuyé")}
+          onPress={() => console.log("Créer un groupe appuyé")} //Remplacer le composant "Button" par un "Pressable" car plus modulable et donne le même rendu sur Android ou iOS https://docs.expo.io/ui-programming/react-native-styling-buttons/
           title="Créer un groupe"
           color="#FF8787"
           accessibilityLabel="Créer un groupe"
-        />
+        /> 
         <SectionList
           sections={DATA}
           keyExtractor={(item, index) => item + index}
@@ -119,5 +127,13 @@ const style = {
   cancel: {
     width: 32,
     height: 32
+  },
+  profil: {
+    backgroundColor: "#FEFCF3",
+    flexDirection: "row",
+    alignItems: 'center'
+  },
+  flexelement: {
+    marginHorizontal: 10
   }
 };
