@@ -8,7 +8,7 @@ export default StyleSheet.create({
     },
     btn_style:{
         width:"40%",
-        borderRadius:100,
+        borderRadius:25,
         overflow:'hidden',
         color:"#FF8787",
         marginBottom:15,

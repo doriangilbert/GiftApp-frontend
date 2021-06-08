@@ -6,7 +6,7 @@ import * as React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import PageInitiale from '../views/PageInitale';
+import PageInitiale from '../views/PageInitiale';
 import Inscription from '../views/Inscription';
 import Connexion from '../views/Connexion';
 import Accueil from '../views/Accueil'
@@ -27,7 +27,7 @@ import DetailCadeau from '../views/DetailCadeau';
 import AjoutCadeau from '../views/AjoutCadeau';
 import { View } from 'react-native';
 
-import { MaterialIcons } from '@expo/vector-icons'; 
+import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -46,7 +46,7 @@ export const BottomTabs = () => {
 
     <Tab.Navigator initialRouteName="Accueil"
         tabBarOptions={{showLabel:false, style:{backgroundColor:rose_main}}}
-        screenOptions={{headerShown:false}}       
+        screenOptions={{headerShown:false}}
     >
         <Tab.Screen name="Groupes" component={GroupeStackScreen} options={{
             tabBarIcon:({focused}) =>(
@@ -71,12 +71,12 @@ export const BottomTabs = () => {
             }}/>
     </Tab.Navigator>
 
-    ); 
+    );
 }
 
 export const AccueilStackScreen = () => {
     return(
-        
+
         <AccueilStack.Navigator
             initialRouteName="Accueil"
             screenOptions={{headerShown:false}}
@@ -84,14 +84,14 @@ export const AccueilStackScreen = () => {
 
             <AccueilStack.Screen
                 name="Accueil"
-                component={Accueil}            
+                component={Accueil}
             />
-            
+
             <AccueilStack.Screen
                 name="Profil"
                 component={Profil}
             />
-            
+
             <AccueilStack.Screen
                 name="EditProfil"
                 component={EditProfil}
@@ -138,7 +138,7 @@ export const GroupeStackScreen = () => {
             initialRouteName="MesGroupes"
             screenOptions={{headerShown:false}}
         >
-            
+
             <GroupeStack.Screen
                 name="MesGroupes"
                 component={MesGroupes}
@@ -162,49 +162,49 @@ export const GroupeStackScreen = () => {
             <GroupeStack.Screen
                 name="AjoutMembre"
                 component={AjoutMembre}
-            />  
+            />
 
             <GroupeStack.Screen
                 name="AjoutMembreInactif"
                 component={AjoutMembreInactif}
-            />     
+            />
 
             <GroupeStack.Screen
                 name="ProfilMembre"
                 component={ProfilMembre}
-            />   
+            />
 
             <GroupeStack.Screen
                 name="DetailCadeau"
                 component={DetailCadeau}
-            />   
+            />
 
             <GroupeStack.Screen
                 name="AjoutCadeau"
                 component={AjoutCadeau}
-            /> 
-            
+            />
+
         </GroupeStack.Navigator>
     );
 }
 
 export const InitialTabs = () => {
     return (
-        <InitialStack.Navigator initialRouteName="Page initiale" screenOptions={{headerShown:false}}>
+        <InitialStack.Navigator initialRouteName="PageInitiale" screenOptions={{headerShown:false}}>
 
-            <InitialStack.Screen 
-                name="Page initiale" 
-                component={PageInitiale} 
+            <InitialStack.Screen
+                name="PageInitiale"
+                component={PageInitiale}
             />
 
-            <InitialStack.Screen 
+            <InitialStack.Screen
                 name="Connexion"
-                component={Connexion} 
+                component={Connexion}
             />
 
-            <InitialStack.Screen 
-                name="Inscription" 
-                component={Inscription} 
+            <InitialStack.Screen
+                name="Inscription"
+                component={Inscription}
             />
 
         </InitialStack.Navigator>

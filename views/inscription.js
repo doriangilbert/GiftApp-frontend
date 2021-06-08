@@ -76,7 +76,7 @@ const Inscription = (props) => {
             <View style={styles.action}>
                 <FontAwesome
                     name="user-o"
-                    size={25}
+                    size={20}
                     color="#05375a"
                 />
                 <TextInput
@@ -193,12 +193,17 @@ const Inscription = (props) => {
             </View>
 
             <View style={ styles.button }>
-                <LinearGradient
-                    colors={['#FF8787','#f39a9a']}
+                <TouchableOpacity
                     style={styles.signUp}
+                    onPress={() => {props.navigation.navigate('PageInitiale')}}
                 >
-                    <Text style={[styles.textSign, {color:'#fff'}]}>S'inscrire</Text>
-                </LinearGradient>
+                    <LinearGradient
+                        colors={['#FF8787','#f39a9a']}
+                        style={styles.signUp}
+                    >
+                        <Text style={[styles.textSign, {color:'#fff'}]}>S'inscrire</Text>
+                    </LinearGradient>
+                </TouchableOpacity>
 
                 <TouchableOpacity
                     onPress={() => {props.navigation.goBack()}}
@@ -278,7 +283,7 @@ const styles = StyleSheet.create({
         marginTop: 30,
     },
     signUp: {
-        width: '75%',
+        width: '100%',
         height: 40,
         justifyContent: 'center',
         alignItems: 'center',

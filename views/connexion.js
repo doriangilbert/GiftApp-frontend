@@ -67,6 +67,7 @@ const Connexion = (props) => {
                     placeholder="Entrer votre email"
                     style={styles.textInput}
                     autoCapitalize="none"
+                    pattern={['^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$']}
                     onChangeText={(val) => textInputChange(val)}
                 />
                 {data.check_textInputChange ?
@@ -82,7 +83,7 @@ const Connexion = (props) => {
                 : null}
             </View>
 
-            <Text style={[styles.text_footer, {marginTop: 35}]}>Mot de Passe</Text>
+            <Text style={[styles.text_footer, {marginTop: 35}]}>Mot de passe</Text>
             <View style={styles.action}>
                 <Feather
                     name="lock"
@@ -115,13 +116,22 @@ const Connexion = (props) => {
                 </TouchableOpacity>
             </View>
 
+            <TouchableOpacity>
+                <Text style={{color: "#FF8787", marginTop:15}}>Mot de passe oublié</Text>
+            </TouchableOpacity>
+
             <View style={styles.button}>
-                <LinearGradient
-                    colors={['#FF8787','#f39a9a']}
+                <TouchableOpacity
                     style={styles.signIn}
+                    onPress={() => {props.navigation.navigate('PageInitiale')}}
                 >
-                    <Text style={[styles.textSign, {color:'#fff'}]}>Se connecter</Text>
-                </LinearGradient>
+                    <LinearGradient
+                        colors={['#FF8787','#f39a9a']}
+                        style={styles.signIn}
+                    >
+                        <Text style={[styles.textSign, {color:'#fff'}]}>Se connecter</Text>
+                    </LinearGradient>
+                </TouchableOpacity>
 
                 <TouchableOpacity
                     onPress={() => {props.navigation.navigate('Inscription')}}
@@ -201,7 +211,7 @@ const styles = StyleSheet.create({
         marginTop: 50
     },
     signIn: {
-        width: '75%',
+        width: '100%',
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
