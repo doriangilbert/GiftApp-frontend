@@ -9,7 +9,7 @@ export default class AjoutMembre extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Text>AjoutMembre</Text>
+        <Text style={{position:'absolute',top:50}}>AjoutMembre</Text>
       </View>
     )
   }

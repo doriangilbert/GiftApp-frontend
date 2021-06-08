@@ -9,7 +9,7 @@ export default class AjoutMembreInactif extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Text>AjoutMembreInactif</Text>
+        <Text style={{position:'absolute',top:50}}>AjoutMembreInactif</Text>
       </View>
     )
   }

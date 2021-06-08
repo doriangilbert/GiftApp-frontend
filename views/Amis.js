@@ -9,7 +9,7 @@ export default class Amis extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Text>Amis</Text>
+        <Text style={{position:'absolute',top:50}}>Amis</Text>
       </View>
     )
   }

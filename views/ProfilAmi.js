@@ -9,7 +9,7 @@ export default class ProfilAmi extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Text>ProfilAmi</Text>
+        <Text style={{position:'absolute',top:50}}>ProfilAmi</Text>
       </View>
     )
   }
