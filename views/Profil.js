@@ -1,6 +1,6 @@
 //core
 import React from 'react';
-import { Text, View, Image, TouchableOpacity, Button, StyleSheet } from 'react-native';
+import { Text, View, Image, TouchableOpacity, Button, StyleSheet, StatusBar } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 //style
@@ -11,7 +11,7 @@ export default class Profil extends React.Component {
     return (
       <View style={style.view}>
 
-
+          <StatusBar backgroundColor='#FF8787A2' barStyle="light-content" />
           <Image  style={[style.photo, {height:200,marginTop:"15%"}]}
                         source={require("../assets/photo.png")}
           />

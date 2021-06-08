@@ -1,7 +1,6 @@
 //core
 import React from 'react';
-import { TouchableWithoutFeedback } from 'react-native';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, TouchableWithoutFeedback, StatusBar } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 //style
@@ -10,8 +9,7 @@ import style from '../Style';
 export default function Accueil(props) {
     return (
       <View style={style.view}>
-
-
+        <StatusBar backgroundColor='#FF8787A2' barStyle="light-content" />
         <View style={[{justifyContent:"flex-end",flexDirection:"row"}]}>
           <View style={{flex:1}}></View>
             <TouchableWithoutFeedback style={{flex:1, flexDirection:"row"}}

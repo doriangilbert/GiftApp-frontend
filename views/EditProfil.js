@@ -1,6 +1,6 @@
 //core
 import React from 'react';
-import { View, Image, TextInput, Text } from 'react-native';
+import { View, Image, TextInput, Text, StatusBar } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import { FontAwesome } from '@expo/vector-icons';
@@ -12,7 +12,7 @@ export default class EditProfil extends React.Component {
   render() {
     return (
       <View style={style.view}>
-
+        <StatusBar backgroundColor='#FF8787A2' barStyle="light-content" />
         <Image  style={[style.photo, {height:150, marginTop:"15%"}]}
             source={require("../assets/photo.png")}
         />

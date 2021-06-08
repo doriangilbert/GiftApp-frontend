@@ -48,7 +48,8 @@ const Connexion = (props) => {
 
     return (
       <View style={styles.container}>
-        <StatusBar backgroundColor='#FF8787A2' barStyle="light-content" />
+
+
         <View style={styles.header}>
             <Image source={require("../assets/logo_large.png")} style={styles.logo} />
         </View>
@@ -58,8 +59,8 @@ const Connexion = (props) => {
         >
             <Text style={styles.text_footer}>Email</Text>
             <View style={styles.action}>
-                <FontAwesome
-                    name="user-o"
+                <Feather
+                    name="mail"
                     size={25}
                     color="#05375a"
                 />

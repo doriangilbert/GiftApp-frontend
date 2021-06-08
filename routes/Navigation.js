@@ -45,27 +45,27 @@ export const BottomTabs = () => {
     return (
 
     <Tab.Navigator initialRouteName="Accueil"
-        tabBarOptions={{showLabel:false, style:{backgroundColor:rose_main}}}
+        tabBarOptions={{showLabel:false, style:{backgroundColor:rose_main, height:60}}}
         screenOptions={{headerShown:false}}
     >
         <Tab.Screen name="Groupes" component={GroupeStackScreen} options={{
             tabBarIcon:({focused}) =>(
                 <View>
-                    <MaterialIcons name="groups" size={30} style={{color:focused?"white":"#D74848"}} />
+                    <MaterialIcons name="groups" size={40} style={{color:focused?"white":"#D74848"}} />
                 </View>
             )
             }}/>
         <Tab.Screen name="Accueil" component={AccueilStackScreen} options={{
             tabBarIcon:({focused}) =>(
                 <View>
-                    <Entypo name="home" size={24} style={{color:focused?"white":"#D74848"}} />
+                    <Entypo name="home" size={33} style={{color:focused?"white":"#D74848"}} />
                 </View>
             )
             }}/>
         <Tab.Screen name="Amis" component={AmisStackScreen} options={{
             tabBarIcon:({focused}) =>(
                 <View>
-                    <FontAwesome5 name="user-friends" size={24} style={{color:focused?"white":"#D74848"}} />
+                    <FontAwesome5 name="user-friends" size={30} style={{color:focused?"white":"#D74848"}} />
                 </View>
             )
             }}/>
