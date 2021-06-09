@@ -1,6 +1,6 @@
 //core
 
-import { Button, Image, Pressable, SectionList, Text, View } from 'react-native';
+import { Image, Pressable, SectionList, Text, View } from 'react-native';
 
 import React from 'react';
 
@@ -68,12 +68,9 @@ export default class MesGroupes extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Button
-          onPress={() => console.log("Créer un groupe appuyé")} //Remplacer le composant "Button" par un "Pressable" car plus modulable et donne le même rendu sur Android ou iOS https://docs.expo.io/ui-programming/react-native-styling-buttons/
-          title="Créer un groupe"
-          color="#FF8787"
-          accessibilityLabel="Créer un groupe"
-        /> 
+        <Pressable onPress={() => console.log("Créer un groupe appuyé")} style={style.btnCreerGroupe}>
+          <Text style={style.txtBtnCreerGroupe}>{"Créer un groupe"}</Text>
+        </Pressable>
         <SectionList
           sections={DATA}
           keyExtractor={(item, index) => item + index}
@@ -97,8 +94,8 @@ export default class MesGroupes extends React.Component {
 const style = {
   view: { 
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: "#FEFCF3"
   },
   item: {
@@ -106,7 +103,7 @@ const style = {
     padding: 10,
     marginVertical: 10,
     flexDirection: "row",
-    alignItems: 'center',
+    alignItems: "center",
   },
   header: {
     fontSize: 24,
@@ -131,9 +128,26 @@ const style = {
   profil: {
     backgroundColor: "#FEFCF3",
     flexDirection: "row",
-    alignItems: 'center'
+    alignItems: "center"
   },
   flexelement: {
     marginHorizontal: 10
+  },
+  btnCreerGroupe: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: "#FF8787", 
+    margin: 5
+  },
+  txtBtnCreerGroupe: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "#FFFFFF"
   }
 };
