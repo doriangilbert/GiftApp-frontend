@@ -26,26 +26,26 @@ const Item1 = ({ title }) => (
     <Pressable onPress={() => console.log("Profil appuyé")} style={style.profil}>
       <Image
         style={[style.photo, style.flexelement]}
-        source={{
-          uri: require("../assets/photo.png"),
-        }}
+        source={
+          require("../assets/photo.png")
+        }
       />
       <Text style={[style.title, style.flexelement]}>{title}</Text>
     </Pressable>
     <Pressable onPress={() => console.log("Confirmer appuyé")}>
       <Image
         style={[style.confirm, style.flexelement]}
-        source={{
-          uri: require("../assets/confirm.svg"),
-        }}
+        source={
+          require("../assets/confirm.svg")
+        }
       />
     </Pressable>
     <Pressable onPress={() => console.log("Annuler appuyé")}>
       <Image
         style={[style.cancel, style.flexelement]}
-        source={{
-          uri: require("../assets/cancel.svg"),
-        }}
+        source={
+          require("../assets/cancel.svg")
+        }
       />
     </Pressable>
   </View>
@@ -56,9 +56,9 @@ const Item = ({ title }) => (
     <Pressable onPress={() => console.log("Profil appuyé")} style={style.profil}>
       <Image
           style={[style.photo, style.flexelement]}
-          source={{
-            uri: require("../assets/photo.png"),
-          }}
+          source={
+            require("../assets/photo.png")
+          }
       />
       <Text style={[style.title, style.flexelement]}>{title}</Text>
     </Pressable>
@@ -68,9 +68,18 @@ export default class MesGroupes extends React.Component {
   render() {
     return (
       <View style={style.view}>
+<<<<<<< HEAD
         <Pressable onPress={() => console.log("Créer un groupe appuyé")} style={style.btnCreerGroupe}>
           <Text style={style.txtBtnCreerGroupe}>{"Créer un groupe"}</Text>
         </Pressable>
+=======
+        <Button
+          onPress={() => console.log("Créer un groupe appuyé")} //Remplacer le composant "Button" par un "Pressable" car plus modulable et donne le même rendu sur Android ou iOS https://docs.expo.io/ui-programming/react-native-styling-buttons/
+          title="Créer un groupe"
+          color="#FF8787"
+          accessibilityLabel="Créer un groupe"
+        />
+>>>>>>> samy
         <SectionList
           sections={DATA}
           keyExtractor={(item, index) => item + index}
@@ -92,7 +101,7 @@ export default class MesGroupes extends React.Component {
 }
 
 const style = {
-  view: { 
+  view: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
