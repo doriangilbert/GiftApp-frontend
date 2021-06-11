@@ -1,6 +1,6 @@
 //core
 
-import { Image, Pressable, SectionList, Text, View } from 'react-native';
+import { Image, Pressable, SectionList, Text, View, Button } from 'react-native';
 
 import React from 'react';
 
@@ -68,18 +68,18 @@ export default class MesGroupes extends React.Component {
   render() {
     return (
       <View style={style.view}>
-<<<<<<< HEAD
+
         <Pressable onPress={() => console.log("Créer un groupe appuyé")} style={style.btnCreerGroupe}>
           <Text style={style.txtBtnCreerGroupe}>{"Créer un groupe"}</Text>
         </Pressable>
-=======
+
         <Button
           onPress={() => console.log("Créer un groupe appuyé")} //Remplacer le composant "Button" par un "Pressable" car plus modulable et donne le même rendu sur Android ou iOS https://docs.expo.io/ui-programming/react-native-styling-buttons/
           title="Créer un groupe"
           color="#FF8787"
           accessibilityLabel="Créer un groupe"
         />
->>>>>>> samy
+
         <SectionList
           sections={DATA}
           keyExtractor={(item, index) => item + index}
@@ -149,7 +149,7 @@ const style = {
     paddingHorizontal: 32,
     borderRadius: 4,
     elevation: 3,
-    backgroundColor: "#FF8787", 
+    backgroundColor: "#FF8787",
     margin: 5
   },
   txtBtnCreerGroupe: {

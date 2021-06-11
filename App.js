@@ -14,15 +14,9 @@ import style from './Style';
 
 //navigation https://reactnavigation.org/docs/
 
-
-
 //style
 
-
 //Routes
-
-
-
 
 export default function App() {
 
@@ -34,14 +28,12 @@ export default function App() {
     );
   } else {
     return(
-    <NavigationContainer>
-      <InitialTabs/>
-    </NavigationContainer>
+        <NavigationContainer>
+          <InitialTabs/>
+        </NavigationContainer>
     );
   }
 }
-
-
 
 //API
 const axios = require('axios');
