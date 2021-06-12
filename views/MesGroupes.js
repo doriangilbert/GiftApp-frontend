@@ -26,26 +26,20 @@ const Item1 = ({ title }) => (
     <Pressable onPress={() => console.log("Profil appuyé")} style={style.profil}>
       <Image
         style={[style.photo, style.flexelement]}
-        source={{
-          uri: require("../assets/photo.png"),
-        }}
+        source={require("../assets/photo.png")}
       />
       <Text style={[style.title, style.flexelement]}>{title}</Text>
     </Pressable>
     <Pressable onPress={() => console.log("Confirmer appuyé")}>
       <Image
         style={[style.confirm, style.flexelement]}
-        source={{
-          uri: require("../assets/confirm.svg"),
-        }}
+        source={require("../assets/confirm.svg")}
       />
     </Pressable>
     <Pressable onPress={() => console.log("Annuler appuyé")}>
       <Image
         style={[style.cancel, style.flexelement]}
-        source={{
-          uri: require("../assets/cancel.svg"),
-        }}
+        source={require("../assets/cancel.svg")}
       />
     </Pressable>
   </View>
@@ -56,9 +50,7 @@ const Item = ({ title }) => (
     <Pressable onPress={() => console.log("Profil appuyé")} style={style.profil}>
       <Image
           style={[style.photo, style.flexelement]}
-          source={{
-            uri: require("../assets/photo.png"),
-          }}
+          source={require("../assets/photo.png")}
       />
       <Text style={[style.title, style.flexelement]}>{title}</Text>
     </Pressable>
