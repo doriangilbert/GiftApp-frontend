@@ -105,7 +105,8 @@ const styles = StyleSheet.create({
     },
     textSign: {
         fontSize: 17,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        width: '100%',
+        textAlign: 'center'
     }
 });
-
