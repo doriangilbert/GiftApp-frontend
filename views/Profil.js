@@ -1,10 +1,14 @@
 //core
 import React from 'react';
+
 import { Text, View, Image, TouchableOpacity, Button, StyleSheet, StatusBar } from 'react-native';
+
 import { LinearGradient } from 'expo-linear-gradient';
 
 //style
 import style from '../Style';
+
+import { styles } from "./Connexion";
 
 export default class Profil extends React.Component {
   render() {
@@ -25,6 +29,7 @@ export default class Profil extends React.Component {
 
           <Text style={style.mail}>duponddupont@gmail.com</Text>
 
+
           <View style={styles.button}>
               <TouchableOpacity
                   style={styles.sign}
@@ -37,6 +42,7 @@ export default class Profil extends React.Component {
                       <Text style={[styles.textSign, {color:'#fff'}]}>Editer mon profil</Text>
                   </LinearGradient>
               </TouchableOpacity>
+
           </View>
           <View style={styles.button}>
               <TouchableOpacity
@@ -69,6 +75,7 @@ export default class Profil extends React.Component {
   }
 }
 
+
 const styles = StyleSheet.create({
     button: {
         alignItems: 'center',
@@ -89,3 +96,4 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     }
   });
+

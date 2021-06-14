@@ -148,7 +148,7 @@ const Connexion = (props) => {
 
 export default Connexion;
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#FF8787A2',
