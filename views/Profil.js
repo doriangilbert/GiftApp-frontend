@@ -1,9 +1,13 @@
 //core
 import React from 'react';
 import { Text, View, Image, TouchableOpacity,Button } from 'react-native';
+ 
+import { LinearGradient } from 'expo-linear-gradient';
 
 //style
 import style from '../Style';
+
+import { styles } from "./Connexion";
 
 export default class Profil extends React.Component {
 
@@ -36,8 +40,8 @@ export default class Profil extends React.Component {
               title="Paramètres"
               onPress={() => {this.props.navigation.navigate("Parametres")}}
             />
-          </View>
-
+          </View> 
+          
           <View style={[style.btn_style, {width:200,marginBottom:0}]}>
             <Button
               color="#FF8787"
@@ -60,3 +64,4 @@ export default class Profil extends React.Component {
     )
   }
 }
+

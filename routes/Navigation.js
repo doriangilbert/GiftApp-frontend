@@ -6,7 +6,7 @@ import * as React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import PageInitiale from '../views/PageInitale';
+import PageInitiale from '../views/PageInitiale';
 import Inscription from '../views/Inscription';
 import Connexion from '../views/Connexion';
 import Accueil from '../views/Accueil'
