@@ -20,59 +20,27 @@ import style from './Style';
 
 export default function App() {
 
-  if (true) {
+  if (connected()) {
     return (
       <NavigationContainer>
-        <BottomTabs/>
+        <BottomTabs />
       </NavigationContainer>
     );
   } else {
-    return(
-        <NavigationContainer>
-          <InitialTabs/>
-        </NavigationContainer>
+    return (
+      <NavigationContainer>
+        <InitialTabs />
+      </NavigationContainer>
     );
   }
 }
 
 //API
 const axios = require('axios');
-const co = require('./co.json');
 
 //App
 
 function connected() {
-  console.log("Connexion en cours")
-  if (co.id != 0) {
-
-    return co.id
-  } else {
-    let url = 'https://localhost:8000/api/connexion/';
-    //let url = "https://world.openfoodfacts.org/api/v0/product/737628064502.json";
-    let data = {
-      'mail': co.mail,
-      'mdp': co.mdp
-    };
-    let config = {
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      }
-    };
-    axios.get(url, null, config)
-      .then(function (response) {
-        console.log(response);
-        /*
-        if (response.id) {
-          co.id = response.id;
-          return co.id;
-        } else {
-          console.error("Erreur connexion");
-          return 0;
-        }*/
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-  return 0;
+  console.log("cookie : ", document.cookie)
+  return document.cookie != "";
 }

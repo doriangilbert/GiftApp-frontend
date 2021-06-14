@@ -15,7 +15,7 @@ export default function Accueil(props) {
             <TouchableWithoutFeedback style={{flex:1, flexDirection:"row"}}
               onPress={() => {props.navigation.navigate("Profil")}}
             >
-              <Image  style={[style.photo, {flex:1, marginTop:"10%"}]}
+              <Image  style={[style.photo, {flex:1, marginTop:"10%", minWidth: 100, minHeight:100}]}
                       source={require("../assets/photo.png")}
               />
             </TouchableWithoutFeedback>

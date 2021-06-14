@@ -11,53 +11,53 @@ import style from '../Style';
 
 
 export default class PageInitiale extends React.Component {
-  render() {
-    return (
-      <View style={style.view}>
-        <StatusBar backgroundColor='#FF8787A2' barStyle="light-content" />
-            <Image source={require("../assets/logo_large.png")} style={style.logo} />
+    render() {
+        return (
+            <View style={style.view}>
+                <StatusBar backgroundColor='#FF8787A2' barStyle="light-content" />
+                <Image source={require("../assets/logo_large.png")} style={style.logo} />
 
-            <View style={styles.button}>
-                <TouchableOpacity
-                    style={styles.sign}
-                    onPress={() => {this.props.navigation.navigate('Connexion')}}
-                >
-                    <LinearGradient
-                        colors={['#FF8787','#f39a9a']}
+                <View style={styles.button}>
+                    <TouchableOpacity
                         style={styles.sign}
+                        onPress={() => { this.props.navigation.navigate('Connexion') }}
                     >
-                        <Text style={[styles.textSign, {color:'#fff'}]}>Connexion</Text>
-                    </LinearGradient>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.button}>
-                <TouchableOpacity
-                    style={styles.sign}
-                    onPress={() => {this.props.navigation.navigate('Inscription')}}
-                >
-                    <LinearGradient
-                        colors={['#FF8787','#f39a9a']}
+                        <LinearGradient
+                            colors={['#FF8787', '#f39a9a']}
+                            style={styles.sign}
+                        >
+                            <Text style={[styles.textSign, { color: '#fff' }]}>Connexion</Text>
+                        </LinearGradient>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.button}>
+                    <TouchableOpacity
                         style={styles.sign}
+                        onPress={() => { this.props.navigation.navigate('Inscription') }}
                     >
-                        <Text style={[styles.textSign, {color:'#fff'}]}>Inscription</Text>
-                    </LinearGradient>
-                </TouchableOpacity>
+                        <LinearGradient
+                            colors={['#FF8787', '#f39a9a']}
+                            style={styles.sign}
+                        >
+                            <Text style={[styles.textSign, { color: '#fff' }]}>Inscription</Text>
+                        </LinearGradient>
+                    </TouchableOpacity>
+                </View>
+
+                <BottomSocial />
+
             </View>
-
-        <BottomSocial/>
-
-      </View>
-    )
-  }
+        )
+    }
 }
 
 const styles = StyleSheet.create({
     button: {
         alignItems: 'center',
-        width:"50%",
-        borderRadius:10,
-        marginBottom:15,
-        marginTop:15
+        width: "50%",
+        borderRadius: 10,
+        marginBottom: 15,
+        marginTop: 15
     },
     sign: {
         width: '100%',
@@ -70,4 +70,4 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold'
     }
-  });
+});
