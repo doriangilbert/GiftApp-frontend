@@ -1,10 +1,14 @@
 //core
 import React from 'react';
+
 import { Text, View, Image, TouchableOpacity, Button, StyleSheet, StatusBar } from 'react-native';
+
 import { LinearGradient } from 'expo-linear-gradient';
 
 //style
 import style from '../Style';
+
+import { styles } from "./Connexion";
 
 export default class Profil extends React.Component {
     render() {
@@ -61,7 +65,14 @@ export default class Profil extends React.Component {
                 <View style={styles.button}>
                     <TouchableOpacity
                         style={styles.sign}
-                        onPress={() => { this.props.navigation.navigate('Accueil') }}
+                        onPress={() => {
+                            document.cookie = "";
+                            try {
+                                window.location.reload();
+                            } catch (e) {
+                                console.error(e);
+                            }
+                        }}
                     >
                         <LinearGradient
                             colors={['#FF8787', '#f39a9a']}
@@ -71,10 +82,11 @@ export default class Profil extends React.Component {
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </View >
         )
     }
 }
+
 
 const styles = StyleSheet.create({
     button: {
@@ -96,3 +108,4 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     }
 });
+

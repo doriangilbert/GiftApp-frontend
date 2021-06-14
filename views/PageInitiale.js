@@ -1,11 +1,14 @@
 //core
 import React from 'react';
+
 import { Text, View, Button, Image, StatusBar, StyleSheet, TouchableOpacity } from 'react-native';
 import { BottomSocial } from '../Components/BottomSocial';
 import { LinearGradient } from 'expo-linear-gradient';
 
+
 //style
 import style from '../Style';
+
 
 export default class PageInitiale extends React.Component {
     render() {

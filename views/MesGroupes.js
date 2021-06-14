@@ -1,6 +1,6 @@
 //core
 
-import { Button, Image, Pressable, SectionList, Text, View } from 'react-native';
+import { Image, Pressable, SectionList, Text, View } from 'react-native';
 
 import React from 'react';
 
@@ -60,18 +60,9 @@ export default class MesGroupes extends React.Component {
   render() {
     return (
       <View style={style.view}>
-
         <Pressable onPress={() => console.log("Créer un groupe appuyé")} style={style.btnCreerGroupe}>
           <Text style={style.txtBtnCreerGroupe}>{"Créer un groupe"}</Text>
         </Pressable>
-
-        <Button
-          onPress={() => console.log("Créer un groupe appuyé")} //Remplacer le composant "Button" par un "Pressable" car plus modulable et donne le même rendu sur Android ou iOS https://docs.expo.io/ui-programming/react-native-styling-buttons/
-          title="Créer un groupe"
-          color="#FF8787"
-          accessibilityLabel="Créer un groupe"
-        />
-
         <SectionList
           sections={DATA}
           keyExtractor={(item, index) => item + index}
@@ -100,15 +91,15 @@ const style = {
     backgroundColor: "#FEFCF3"
   },
   item: {
-    backgroundColor: "#FEFCF3",
+    backgroundColor: "transparent",
     padding: 10,
     marginVertical: 10,
     flexDirection: "row",
-    alignItems: "center",
+    alignItems: "center"
   },
   header: {
     fontSize: 24,
-    backgroundColor: "#FEFCF3"
+    backgroundColor: "transparent"
   },
   title: {
     color: "#D74848",
@@ -127,7 +118,7 @@ const style = {
     height: 32
   },
   profil: {
-    backgroundColor: "#FEFCF3",
+    backgroundColor: "transparent",
     flexDirection: "row",
     alignItems: "center"
   },
@@ -138,7 +129,7 @@ const style = {
     alignItems: "center",
     justifyContent: "center",
     paddingVertical: 12,
-    paddingHorizontal: 32,
+    paddingHorizontal: 50,
     borderRadius: 4,
     elevation: 3,
     backgroundColor: "#FF8787",
