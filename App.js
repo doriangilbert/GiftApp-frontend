@@ -20,7 +20,7 @@ import style from './Style';
 
 export default function App() {
 
-  if (connected()) {
+  if (true /*connected()*/) {
     return (
       <NavigationContainer>
         <BottomTabs />
@@ -40,7 +40,7 @@ const axios = require('axios');
 
 //App
 
-function connected() {
+/*function connected() {
   console.log("cookie : ", document.cookie)
   return document.cookie != "";
-}
+}*/
