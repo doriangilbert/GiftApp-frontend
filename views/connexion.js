@@ -15,7 +15,7 @@ const Connexion = (props) => {
 
     // Vérif email
     const textInputChange = (val) => {
-        if(val.length !== 0) {
+        if (val.length !== 0) {
             setData({
                 ...data,
                 email: val,
@@ -47,102 +47,143 @@ const Connexion = (props) => {
     }
 
     return (
-      <View style={styles.container}>
+        <View style={styles.container}>
 
 
-        <View style={styles.header}>
-            <Image source={require("../assets/logo_large.png")} style={styles.logo} />
-        </View>
-        <Animatable.View
-            animation="fadeInUpBig"
-            style={styles.footer}
-        >
-            <Text style={styles.text_footer}>Email</Text>
-            <View style={styles.action}>
-                <Feather
-                    name="mail"
-                    size={25}
-                    color="#05375a"
-                />
-                <TextInput
-                    placeholder="Entrer votre email"
-                    style={styles.textInput}
-                    autoCapitalize="none"
-                    pattern={['^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$']}
-                    onChangeText={(val) => textInputChange(val)}
-                />
-                {data.check_textInputChange ?
-                <Animatable.View
-                    animation="bounceIn"
-                >
-                    <FontAwesome5
-                        name="check-circle"
-                        size={20}
-                        color="green"
-                    />
-                </Animatable.View>
-                : null}
+            <View style={styles.header}>
+                <Image source={require("../assets/logo_large.png")} style={styles.logo} />
             </View>
-
-            <Text style={[styles.text_footer, {marginTop: 35}]}>Mot de passe</Text>
-            <View style={styles.action}>
-                <Feather
-                    name="lock"
-                    size={25}
-                    color="#05375a"
-                />
-                <TextInput
-                    placeholder="Entrer votre mot de passe"
-                    secureTextEntry={data.secureTextEntry ? true : false}
-                    style={styles.textInput}
-                    autoCapitalize="none"
-                    onChangeText={(val) => handlePasswordChange(val)}
-                />
-                <TouchableOpacity
-                    onPress={updateSecureEntry}
-                >
-                    {data.secureTextEntry ?
+            <Animatable.View
+                animation="fadeInUpBig"
+                style={styles.footer}
+            >
+                <Text style={styles.text_footer}>Email</Text>
+                <View style={styles.action}>
                     <Feather
-                        name="eye-off"
-                        size={20}
-                        color="grey"
+                        name="mail"
+                        size={25}
+                        color="#05375a"
                     />
-                    :
+                    <TextInput
+                        placeholder="Entrer votre email"
+                        style={styles.textInput}
+                        autoCapitalize="none"
+                        pattern={['^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$']}
+                        onChangeText={(val) => textInputChange(val)}
+                    />
+                    {data.check_textInputChange ?
+                        <Animatable.View
+                            animation="bounceIn"
+                        >
+                            <FontAwesome5
+                                name="check-circle"
+                                size={20}
+                                color="green"
+                            />
+                        </Animatable.View>
+                        : null}
+                </View>
+
+                <Text style={[styles.text_footer, { marginTop: 35 }]}>Mot de passe</Text>
+                <View style={styles.action}>
                     <Feather
-                        name="eye"
-                        size={20}
-                        color="grey"
+                        name="lock"
+                        size={25}
+                        color="#05375a"
                     />
-                    }
-                </TouchableOpacity>
-            </View>
-
-            <TouchableOpacity>
-                <Text style={{color: "#FF8787", marginTop:15}}>Mot de passe oublié</Text>
-            </TouchableOpacity>
-
-            <View style={styles.button}>
-                <TouchableOpacity
-                    style={styles.signIn}
-                    onPress={() => {props.navigation.navigate('PageInitiale')}}
-                >
-                    <LinearGradient
-                        colors={['#FF8787','#f39a9a']}
-                        style={styles.signIn}
+                    <TextInput
+                        placeholder="Entrer votre mot de passe"
+                        secureTextEntry={data.secureTextEntry ? true : false}
+                        style={styles.textInput}
+                        autoCapitalize="none"
+                        onChangeText={(val) => handlePasswordChange(val)}
+                    />
+                    <TouchableOpacity
+                        onPress={updateSecureEntry}
                     >
-                        <Text style={[styles.textSign, {color:'#fff'}]}>Se connecter</Text>
-                    </LinearGradient>
+                        {data.secureTextEntry ?
+                            <Feather
+                                name="eye-off"
+                                size={20}
+                                color="grey"
+                            />
+                            :
+                            <Feather
+                                name="eye"
+                                size={20}
+                                color="grey"
+                            />
+                        }
+                    </TouchableOpacity>
+                </View>
+
+                <TouchableOpacity>
+                    <Text style={{ color: "#FF8787", marginTop: 15 }}>Mot de passe oublié</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity
-                    onPress={() => {props.navigation.navigate('Inscription')}}
-                    style={[styles.signIn, {borderColor:'#FF8787A2', borderWidth:1, marginTop:15}]}
-                >
-                    <Text style={[styles.textSign, {color:'#FF8787A2'}]}>S'inscrire</Text>
-                </TouchableOpacity>
-            </View>
-        </Animatable.View>
-      </View>
+                <View style={styles.button}>
+                    <TouchableOpacity
+                        style={styles.signIn}
+                        onPress={() => {
+                            let axios = require('axios');
+                            const URL = 'http://www.giftapp.fr/backend/public/index.php/api/login';
+                            const DATA = {
+                                "email": data.email,
+                                "password": data.mdp
+                            };
+                            const HEADERS = {
+                                'Content-Type': 'application/json'
+                            };
+                            const aucunNull = (
+                                data.email != "" &&
+                                data.mdp != ""
+                            );
+
+                            if (aucunNull) {
+                                axios.post(URL, DATA, HEADERS).then((res) => {
+                                    console.log(res);
+                                    if (res.status == 200) {
+
+                                        document.cookie = `${res.data.token}`;
+                                        try {
+                                            window.location.reload();
+                                        } catch (e) {
+                                            console.error(e);
+                                        }
+
+                                        //props.navigation.navigate('PageInitiale');
+                                    }
+
+                                }).catch((err) => {
+                                    console.error(err);
+                                })
+
+                            } else {
+                                console.warn("Champs vide !")
+                            }
+
+                            if (false) {
+
+                            }
+                        }}
+                    >
+                        <LinearGradient
+                            colors={['#FF8787', '#f39a9a']}
+                            style={styles.signIn}
+                        >
+                            <Text style={[styles.textSign, { color: '#fff' }]}>Se connecter</Text>
+                        </LinearGradient>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        onPress={() => { props.navigation.navigate('Inscription') }}
+                        style={[styles.signIn, { borderColor: '#FF8787A2', borderWidth: 1, marginTop: 15 }]}
+                    >
+                        <Text style={[styles.textSign, { color: '#FF8787A2' }]}>S'inscrire</Text>
+                    </TouchableOpacity>
+                </View>
+            </Animatable.View>
+        </View >
     )
 }
 
@@ -150,8 +191,8 @@ export default Connexion;
 
 export const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: '#FF8787A2',
+        flex: 1,
+        backgroundColor: '#FF8787A2',
     },
     header: {
         flex: 1,
@@ -168,7 +209,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 30
     },
-    logo:{
+    logo: {
         position: 'relative',
         height: 200,
         width: 200,
@@ -224,4 +265,4 @@ export const styles = StyleSheet.create({
         width:"100%",
         textAlign:"center"
     }
-  });
+});
