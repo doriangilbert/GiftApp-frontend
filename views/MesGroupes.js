@@ -1,6 +1,6 @@
 //core
 
-import { Button, Image, SectionList, Text, View } from 'react-native';
+import { Image, Pressable, SectionList, Text, View } from 'react-native';
 
 import React from 'react';
 
@@ -23,41 +23,46 @@ const DATA = [
 
 const Item1 = ({ title }) => (
   <View style={style.item}>
-    <Image
-      style={style.photo}
-      source={require("../assets/photo.png")}
-    />
-    <Text style={style.title}>{title}</Text>
-    <Image
-      style={style.confirm}
-      source={ require("../assets/confirm.svg")}
-    />
-    <Image
-      style={style.cancel}
-      source={ require("../assets/cancel.svg")}
-    />
+    <Pressable onPress={() => console.log("Profil appuyé")} style={style.profil}>
+      <Image
+        style={[style.photo, style.flexelement]}
+        source={require("../assets/photo.png")}
+      />
+      <Text style={[style.title, style.flexelement]}>{title}</Text>
+    </Pressable>
+    <Pressable onPress={() => console.log("Confirmer appuyé")}>
+      <Image
+        style={[style.confirm, style.flexelement]}
+        source={require("../assets/confirm.svg")}
+      />
+    </Pressable>
+    <Pressable onPress={() => console.log("Annuler appuyé")}>
+      <Image
+        style={[style.cancel, style.flexelement]}
+        source={require("../assets/cancel.svg")}
+      />
+    </Pressable>
   </View>
 );
 
 const Item = ({ title }) => (
   <View style={style.item}>
-    <Image
-      style={style.photo}
-      source={ require("../assets/photo.png")}
-    />
-    <Text style={style.title}>{title}</Text>
+    <Pressable onPress={() => console.log("Profil appuyé")} style={style.profil}>
+      <Image
+          style={[style.photo, style.flexelement]}
+          source={require("../assets/photo.png")}
+      />
+      <Text style={[style.title, style.flexelement]}>{title}</Text>
+    </Pressable>
   </View>
 );
 export default class MesGroupes extends React.Component {
   render() {
     return (
       <View style={style.view}>
-        <Button
-          onPress={console.log("Créer un groupe appuyé")}
-          title="Créer un groupe"
-          color="#FF8787"
-          accessibilityLabel="Créer un groupe"
-        />
+        <Pressable onPress={() => console.log("Créer un groupe appuyé")} style={style.btnCreerGroupe}>
+          <Text style={style.txtBtnCreerGroupe}>{"Créer un groupe"}</Text>
+        </Pressable>
         <SectionList
           sections={DATA}
           keyExtractor={(item, index) => item + index}
@@ -79,22 +84,22 @@ export default class MesGroupes extends React.Component {
 }
 
 const style = {
-  view: { 
+  view: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: "#FEFCF3"
   },
   item: {
-    backgroundColor: "#FEFCF3",
+    backgroundColor: "transparent",
     padding: 10,
     marginVertical: 10,
     flexDirection: "row",
-    alignItems: 'center',
+    alignItems: "center"
   },
   header: {
     fontSize: 24,
-    backgroundColor: "#FEFCF3"
+    backgroundColor: "transparent"
   },
   title: {
     color: "#D74848",
@@ -111,5 +116,30 @@ const style = {
   cancel: {
     width: 32,
     height: 32
+  },
+  profil: {
+    backgroundColor: "transparent",
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  flexelement: {
+    marginHorizontal: 10
+  },
+  btnCreerGroupe: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 50,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: "#FF8787",
+    margin: 5
+  },
+  txtBtnCreerGroupe: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "#FFFFFF"
   }
 };

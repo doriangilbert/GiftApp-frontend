@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, Button, Image, TouchableOpacity, TextInput, StyleSheet, StatusBar } from 'react-native';
+import { View, Text, Button, Image, TouchableOpacity, TextInput, StyleSheet, StatusBar, ScrollView } from 'react-native';
 import { FontAwesome, FontAwesome5, Feather } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
@@ -63,8 +63,9 @@ const Inscription = (props) => {
     }
 
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <StatusBar backgroundColor='#FF8787A2' barStyle="light-content" />
+
         <View style={styles.header}>
             <Image source={require("../assets/logo_large.png")} style={styles.logo} />
         </View>
@@ -86,11 +87,11 @@ const Inscription = (props) => {
                 />
             </View>
 
-            <Text style={[styles.text_footer, {marginTop: 20}]}>Prénom</Text>
+            <Text style={[styles.text_footer, {marginTop: 35}]}>Prénom</Text>
             <View style={styles.action}>
                 <FontAwesome
                     name="user-o"
-                    size={20}
+                    size={25}
                     color="#05375a"
                 />
                 <TextInput
@@ -100,11 +101,11 @@ const Inscription = (props) => {
                 />
             </View>
 
-            <Text style={[styles.text_footer, {marginTop: 20}]}>Email</Text>
+            <Text style={[styles.text_footer, {marginTop: 35}]}>Email</Text>
             <View style={styles.action}>
-                <FontAwesome
-                    name="user-o"
-                    size={20}
+                <Feather
+                    name="mail"
+                    size={25}
                     color="#05375a"
                 />
                 <TextInput
@@ -126,11 +127,11 @@ const Inscription = (props) => {
                 : null}
             </View>
 
-            <Text style={[styles.text_footer, {marginTop: 20}]}>Mot de Passe</Text>
+            <Text style={[styles.text_footer, {marginTop: 35}]}>Mot de Passe</Text>
             <View style={styles.action}>
                 <Feather
                     name="lock"
-                    size={20}
+                    size={25}
                     color="#05375a"
                 />
                 <TextInput
@@ -146,24 +147,24 @@ const Inscription = (props) => {
                     {data.secureTextEntry ?
                     <Feather
                         name="eye-off"
-                        size={15}
+                        size={20}
                         color="grey"
                     />
                     :
                     <Feather
                         name="eye"
-                        size={15}
+                        size={20}
                         color="grey"
                     />
                     }
                 </TouchableOpacity>
             </View>
 
-            <Text style={[styles.text_footer, {marginTop: 20}]}>Confirmation Mot de Passe</Text>
+            <Text style={[styles.text_footer, {marginTop: 35}]}>Confirmation Mot de Passe</Text>
             <View style={styles.action}>
                 <Feather
                     name="lock"
-                    size={20}
+                    size={25}
                     color="#05375a"
                 />
                 <TextInput
@@ -179,13 +180,13 @@ const Inscription = (props) => {
                     {data.confirm_secureTextEntry ?
                     <Feather
                         name="eye-off"
-                        size={15}
+                        size={20}
                         color="grey"
                     />
                     :
                     <Feather
                         name="eye"
-                        size={15}
+                        size={20}
                         color="grey"
                     />
                     }
@@ -193,22 +194,27 @@ const Inscription = (props) => {
             </View>
 
             <View style={ styles.button }>
-                <LinearGradient
-                    colors={['#FF8787','#f39a9a']}
+                <TouchableOpacity
                     style={styles.signUp}
+                    onPress={() => {props.navigation.navigate('PageInitiale')}}
                 >
-                    <Text style={[styles.textSign, {color:'#fff'}]}>S'inscrire</Text>
-                </LinearGradient>
+                    <LinearGradient
+                        colors={['#FF8787','#f39a9a']}
+                        style={styles.signUp}
+                    >
+                        <Text style={[styles.textSign, {color:'#fff'}]}>S'inscrire</Text>
+                    </LinearGradient>
+                </TouchableOpacity>
 
                 <TouchableOpacity
                     onPress={() => {props.navigation.goBack()}}
-                    style={[styles.signUp, {borderColor:'#FF8787A2', borderWidth:1, marginTop:15}]}
+                    style={[styles.signUp, {borderColor:'#FF8787A2', borderWidth:1, marginTop:15, marginBottom: 25}]}
                 >
                     <Text style={[styles.textSign, {color:'#FF8787A2'}]}>Se connecter</Text>
                 </TouchableOpacity>
             </View>
         </Animatable.View>
-      </View>
+      </ScrollView>
     )
 }
 
@@ -217,13 +223,14 @@ export default Inscription;
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+
       backgroundColor: '#FF8787A2',
     },
     header: {
         flex: 1,
         justifyContent: 'flex-end',
-        paddingHorizontal: 12,
-        paddingBottom: 30,
+        paddingHorizontal: 20,
+        paddingBottom: 50,
         alignItems: 'center'
     },
     footer: {
@@ -236,10 +243,10 @@ const styles = StyleSheet.create({
     },
     logo:{
         position: 'relative',
-        height: 175,
-        width: 175,
+        height: 200,
+        width: 200,
         resizeMode: 'contain',
-        top: 15
+        top: 30
     },
     text_header: {
         color: '#fff',
@@ -248,7 +255,7 @@ const styles = StyleSheet.create({
     },
     text_footer: {
         color: '#05375a',
-        fontSize: 16
+        fontSize: 18
     },
     action: {
         flexDirection: 'row',
@@ -275,11 +282,11 @@ const styles = StyleSheet.create({
     },*/
     button: {
         alignItems: 'center',
-        marginTop: 30,
+        marginTop: 50
     },
     signUp: {
-        width: '75%',
-        height: 40,
+        width: '100%',
+        height: 50,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 10

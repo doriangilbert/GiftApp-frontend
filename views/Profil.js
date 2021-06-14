@@ -1,7 +1,8 @@
 //core
 import React from 'react';
-import { Text, View, Image, TouchableOpacity,Button } from 'react-native';
- 
+
+import { Text, View, Image, TouchableOpacity, Button, StyleSheet, StatusBar } from 'react-native';
+
 import { LinearGradient } from 'expo-linear-gradient';
 
 //style
@@ -10,58 +11,89 @@ import style from '../Style';
 import { styles } from "./Connexion";
 
 export default class Profil extends React.Component {
-
-
-
   render() {
     return (
       <View style={style.view}>
 
-        
-          <Image  style={[style.photo, {height:200,marginTop:"15%"}]}  
-                        source={require("../assets/photo.png")} 
+          <StatusBar backgroundColor='#FF8787A2' barStyle="light-content" />
+          <Image  style={[style.photo, {height:200,marginTop:"15%"}]}
+                        source={require("../assets/photo.png")}
           />
-        
-        
+
+
           <Text style={style.nom_prenom_M}> Dupond Dupond</Text>
-        
-        
+
+
           <Text style={style.desc_profil}>“-Motus et bouche cousue : c’est notre devise. -Oui, botus et mouche cousue : c’est votre denise.”“-Motus et bouche cousue : c’est notre devise. -Oui, botus et mouche cousue : c’est votre denise.”</Text>
-        
-        
+
+
           <Text style={style.mail}>duponddupont@gmail.com</Text>
-        
-        
-        <View style={style.btn_profil}>
 
-          <View style={[style.btn_style, {width:200,marginBottom:0,marginTop:30}]}>
-            <Button
-              color="#FF8787"
-              title="Paramètres"
-              onPress={() => {this.props.navigation.navigate("Parametres")}}
-            />
-          </View> 
-          
-          <View style={[style.btn_style, {width:200,marginBottom:0}]}>
-            <Button
-              color="#FF8787"
-              title="éditer mon profil"
-              onPress={() => {this.props.navigation.navigate("EditProfil")}}
-            />
+
+          <View style={styles.button}>
+              <TouchableOpacity
+                  style={styles.sign}
+                  onPress={() => {this.props.navigation.navigate('EditProfil')}}
+              >
+                  <LinearGradient
+                      colors={['#FF8787','#f39a9a']}
+                      style={styles.sign}
+                  >
+                      <Text style={[styles.textSign, {color:'#fff'}]}>Editer mon profil</Text>
+                  </LinearGradient>
+              </TouchableOpacity>
+
           </View>
-
-          <View style={[style.btn_style, {width:200,marginBottom:0}]}>
-            <Button
-              color="#FF8787"
-              title="Déconnexion"
-              onPress={() => {}}
-            />
+          <View style={styles.button}>
+              <TouchableOpacity
+                  style={styles.sign}
+                  onPress={() => {this.props.navigation.navigate('Accueil')}}
+              >
+                  <LinearGradient
+                      colors={['#FF8787','#f39a9a']}
+                      style={styles.sign}
+                  >
+                      <Text style={[styles.textSign, {color:'#fff'}]}>Déconnexion</Text>
+                  </LinearGradient>
+              </TouchableOpacity>
           </View>
-          
-        </View>
-
+          <View style={styles.button}>
+              <TouchableOpacity
+                  style={styles.sign}
+                  onPress={() => {this.props.navigation.navigate('Accueil')}}
+              >
+                  <LinearGradient
+                      colors={['#FF8787','#f39a9a']}
+                      style={styles.sign}
+                  >
+                      <Text style={[styles.textSign, {color:'#fff'}]}>Supprimer mon compte</Text>
+                  </LinearGradient>
+              </TouchableOpacity>
+          </View>
       </View>
     )
   }
 }
+
+
+const styles = StyleSheet.create({
+    button: {
+        alignItems: 'center',
+        width:"50%",
+        borderRadius:10,
+        marginBottom:10,
+        marginTop:15
+    },
+    sign: {
+        width: '100%',
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10
+    },
+    textSign: {
+        fontSize: 17,
+        fontWeight: 'bold'
+    }
+  });
 

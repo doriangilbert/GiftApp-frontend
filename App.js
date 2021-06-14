@@ -1,20 +1,22 @@
 //memo https://www.youtube.com/watch?v=Y7rbJRjaYCY
 
 //Core https://reactnative.dev/docs/
-import React from 'react';
+
 import { } from 'react-native';
-
-//navigation https://reactnavigation.org/docs/
 import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
 
-//style
+import { BottomTabs, InitialTabs } from './routes/Navigation';
+
+import { NavigationContainer } from '@react-navigation/native';
+import React from 'react';
+import { View } from 'react-native';
 import style from './Style';
 
-//Routes
-import { BottomTabs, InitialTabs } from './routes/Navigation';
-import { View } from 'react-native';
+//navigation https://reactnavigation.org/docs/
 
+//style
+
+//Routes
 
 export default function App() {
 
@@ -26,14 +28,12 @@ export default function App() {
     );
   } else {
     return(
-    <NavigationContainer>
-      <InitialTabs/>
-    </NavigationContainer>
+        <NavigationContainer>
+          <InitialTabs/>
+        </NavigationContainer>
     );
   }
 }
-
-
 
 //API
 const axios = require('axios');

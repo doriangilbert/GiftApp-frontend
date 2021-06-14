@@ -27,7 +27,7 @@ import DetailCadeau from '../views/DetailCadeau';
 import AjoutCadeau from '../views/AjoutCadeau';
 import { View } from 'react-native';
 
-import { MaterialIcons } from '@expo/vector-icons'; 
+import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -45,38 +45,38 @@ export const BottomTabs = () => {
     return (
 
     <Tab.Navigator initialRouteName="Accueil"
-        tabBarOptions={{showLabel:false, style:{backgroundColor:rose_main}}}
-        screenOptions={{headerShown:false}}       
+        tabBarOptions={{showLabel:false, style:{backgroundColor:rose_main, height:60}}}
+        screenOptions={{headerShown:false}}
     >
         <Tab.Screen name="Groupes" component={GroupeStackScreen} options={{
             tabBarIcon:({focused}) =>(
                 <View>
-                    <MaterialIcons name="groups" size={30} style={{color:focused?"white":"#D74848"}} />
+                    <MaterialIcons name="groups" size={40} style={{color:focused?"white":"#D74848"}} />
                 </View>
             )
             }}/>
         <Tab.Screen name="Accueil" component={AccueilStackScreen} options={{
             tabBarIcon:({focused}) =>(
                 <View>
-                    <Entypo name="home" size={24} style={{color:focused?"white":"#D74848"}} />
+                    <Entypo name="home" size={33} style={{color:focused?"white":"#D74848"}} />
                 </View>
             )
             }}/>
         <Tab.Screen name="Amis" component={AmisStackScreen} options={{
             tabBarIcon:({focused}) =>(
                 <View>
-                    <FontAwesome5 name="user-friends" size={24} style={{color:focused?"white":"#D74848"}} />
+                    <FontAwesome5 name="user-friends" size={30} style={{color:focused?"white":"#D74848"}} />
                 </View>
             )
             }}/>
     </Tab.Navigator>
 
-    ); 
+    );
 }
 
 export const AccueilStackScreen = () => {
     return(
-        
+
         <AccueilStack.Navigator
             initialRouteName="Accueil"
             screenOptions={{headerShown:false}}
@@ -84,14 +84,14 @@ export const AccueilStackScreen = () => {
 
             <AccueilStack.Screen
                 name="Accueil"
-                component={Accueil}            
+                component={Accueil}
             />
-            
+
             <AccueilStack.Screen
                 name="Profil"
                 component={Profil}
             />
-            
+
             <AccueilStack.Screen
                 name="EditProfil"
                 component={EditProfil}
@@ -138,7 +138,7 @@ export const GroupeStackScreen = () => {
             initialRouteName="MesGroupes"
             screenOptions={{headerShown:false}}
         >
-            
+
             <GroupeStack.Screen
                 name="MesGroupes"
                 component={MesGroupes}
@@ -162,49 +162,49 @@ export const GroupeStackScreen = () => {
             <GroupeStack.Screen
                 name="AjoutMembre"
                 component={AjoutMembre}
-            />  
+            />
 
             <GroupeStack.Screen
                 name="AjoutMembreInactif"
                 component={AjoutMembreInactif}
-            />     
+            />
 
             <GroupeStack.Screen
                 name="ProfilMembre"
                 component={ProfilMembre}
-            />   
+            />
 
             <GroupeStack.Screen
                 name="DetailCadeau"
                 component={DetailCadeau}
-            />   
+            />
 
             <GroupeStack.Screen
                 name="AjoutCadeau"
                 component={AjoutCadeau}
-            /> 
-            
+            />
+
         </GroupeStack.Navigator>
     );
 }
 
 export const InitialTabs = () => {
     return (
-        <InitialStack.Navigator initialRouteName="Page initiale" screenOptions={{headerShown:false}}>
+        <InitialStack.Navigator initialRouteName="PageInitiale" screenOptions={{headerShown:false}}>
 
-            <InitialStack.Screen 
-                name="Page initiale" 
-                component={PageInitiale} 
+            <InitialStack.Screen
+                name="PageInitiale"
+                component={PageInitiale}
             />
 
-            <InitialStack.Screen 
+            <InitialStack.Screen
                 name="Connexion"
-                component={Connexion} 
+                component={Connexion}
             />
 
-            <InitialStack.Screen 
-                name="Inscription" 
-                component={Inscription} 
+            <InitialStack.Screen
+                name="Inscription"
+                component={Inscription}
             />
 
         </InitialStack.Navigator>
