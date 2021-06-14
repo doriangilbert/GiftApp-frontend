@@ -1,14 +1,12 @@
 //core
-import React from 'react';
 
-import { Text, View, Image, TouchableOpacity, Button, StyleSheet, StatusBar } from 'react-native';
+import { Button, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import { LinearGradient } from 'expo-linear-gradient';
-
-//style
+import React from 'react';
 import style from '../Style';
 
-import { styles } from "./Connexion";
+//style
 
 export default class Profil extends React.Component {
   render() {
