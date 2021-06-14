@@ -220,6 +220,8 @@ export const styles = StyleSheet.create({
     },
     textSign: {
         fontSize: 18,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        width:"100%",
+        textAlign:"center"
     }
   });

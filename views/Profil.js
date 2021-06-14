@@ -8,7 +8,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 //style
 import style from '../Style';
 
-import { styles } from "./Connexion";
 
 export default class Profil extends React.Component {
   render() {
@@ -93,7 +92,9 @@ const styles = StyleSheet.create({
     },
     textSign: {
         fontSize: 17,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        width:"100%",
+        textAlign:"center"
     }
   });
 
