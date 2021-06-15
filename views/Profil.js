@@ -63,7 +63,7 @@ export default class Profil extends React.Component {
                 </View>
                 <View style={styles.button}>
                     <TouchableOpacity
-                        style={styles.sign}
+                        style={[styles.sign]}
                         onPress={() => {
                             document.cookie = "";
                             try {
