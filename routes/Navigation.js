@@ -1,36 +1,36 @@
 //La gestion de la navigation après avoir été connecté
 
 import 'react-native-gesture-handler'
+
 import * as React from 'react'
 
-import { createStackNavigator } from '@react-navigation/stack'
 import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import PageInitiale from '../views/PageInitiale';
-import Inscription from '../views/Inscription';
-import Connexion from '../views/Connexion';
 import Accueil from '../views/Accueil'
-import Profil from '../views/Profil'
-import Amis from '../views/Amis'
-import MesGroupes from '../views/MesGroupes'
-import EditProfil from '../views/EditProfil';
-import Parametres from '../views/Parametres';
 import AjoutAmis from '../views/AjoutAmis';
-import ProfilAmi from '../views/ProfilAmi';
-import CreationGroupe from '../views/CreationGroupe';
-import Groupe from '../views/Groupe';
-import PersonnesGroupe from '../views/PersonnesGroupe';
+import AjoutCadeau from '../views/AjoutCadeau';
 import AjoutMembre from '../views/AjoutMembre';
 import AjoutMembreInactif from '../views/AjoutMembreInactif';
-import ProfilMembre from '../views/ProfilMembre';
+import Amis from '../views/Amis'
+import Connexion from '../views/Connexion';
+import CreationGroupe from '../views/CreationGroupe';
 import DetailCadeau from '../views/DetailCadeau';
-import AjoutCadeau from '../views/AjoutCadeau';
-import { View } from 'react-native';
-
-import { MaterialIcons } from '@expo/vector-icons';
+import EditProfil from '../views/EditProfil';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import Groupe from '../views/Groupe';
+import Inscription from '../views/Inscription';
 import { LinearGradient } from 'expo-linear-gradient';
+import { MaterialIcons } from '@expo/vector-icons';
+import MesGroupes from '../views/MesGroupes'
+import PageInitiale from '../views/PageInitiale';
+import Parametres from '../views/Parametres';
+import PersonnesGroupe from '../views/PersonnesGroupe';
+import Profil from '../views/Profil'
+import ProfilAmi from '../views/ProfilAmi';
+import ProfilMembre from '../views/ProfilMembre';
+import { View } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack'
 import { rose_main } from '../Style';
 
 const Tab = createBottomTabNavigator();
@@ -39,7 +39,25 @@ const AccueilStack = createStackNavigator();
 const AmisStack = createStackNavigator();
 const GroupeStack = createStackNavigator();
 const InitialStack = createStackNavigator();
+const GlobalStack = createStackNavigator();
 
+export const GlobalNav = () => {
+    return(
+        <GlobalStack.Navigator initialRouteName="BottomTabs" screenOptions={{headerShown:false}}>
+        {/* Changer initialRouteName="InitialTabs" en initialRouteName="BottomTabs" pour ignorer la page de connexion */}
+            <GlobalStack.Screen
+                name="InitialTabs"
+                component={InitialTabs}
+            />
+
+            <GlobalStack.Screen
+                name="BottomTabs"
+                component={BottomTabs}
+            />
+
+        </GlobalStack.Navigator>
+    )
+}
 
 export const BottomTabs = () => {
     return (

@@ -3,6 +3,7 @@ import { View, Text, Button, Image, TouchableOpacity, TextInput, StyleSheet, Sta
 import { FontAwesome, FontAwesome5, Feather } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Connexion = (props) => {
 
@@ -140,18 +141,11 @@ const Connexion = (props) => {
                             );
 
                             if (aucunNull) {
-                                axios.post(URL, DATA, HEADERS).then((res) => {
+                                axios.post(URL, DATA, HEADERS).then(async (res) => {
                                     console.log(res);
                                     if (res.status == 200) {
-
-                                        document.cookie = `${res.data.token}`;
-                                        try {
-                                            window.location.reload();
-                                        } catch (e) {
-                                            console.error(e);
-                                        }
-
-                                        //props.navigation.navigate('PageInitiale');
+                                        await AsyncStorage.setItem("@token", res.data.token);
+                                        props.navigation.navigate('BottomTabs');
                                     }
 
                                 }).catch((err) => {
@@ -160,10 +154,6 @@ const Connexion = (props) => {
 
                             } else {
                                 console.warn("Champs vide !")
-                            }
-
-                            if (false) {
-
                             }
                         }}
                     >
@@ -262,7 +252,12 @@ export const styles = StyleSheet.create({
     textSign: {
         fontSize: 18,
         fontWeight: 'bold',
+<<<<<<< HEAD:views/connexion.js
         width: '100%',
         textAlign: 'center'
+=======
+        width: "100%",
+        textAlign: "center"
+>>>>>>> master:views/Connexion.js
     }
 });
