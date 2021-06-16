@@ -8,8 +8,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 //style
 import style from '../Style';
 
-import { styles } from "./Connexion";
-
 export default class Profil extends React.Component {
     render() {
         return (
@@ -86,7 +84,6 @@ export default class Profil extends React.Component {
         )
     }
 }
-
 
 const styles = StyleSheet.create({
     button: {
