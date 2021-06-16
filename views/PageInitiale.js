@@ -4,6 +4,7 @@ import React from 'react';
 import { Text, View, Button, Image, StatusBar, StyleSheet, TouchableOpacity } from 'react-native';
 import { BottomSocial } from '../Components/BottomSocial';
 import { LinearGradient } from 'expo-linear-gradient';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 //style
@@ -11,6 +12,15 @@ import style from '../Style';
 
 
 export default class PageInitiale extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    async componentDidMount() {
+        const token = await AsyncStorage.getItem("@token");
+        //console.log('token: ', token);
+        if(token != null)
+            this.props.navigation.navigate('BottomTabs');
+    }
     render() {
         return (
             <View style={style.view}>
@@ -69,7 +79,7 @@ const styles = StyleSheet.create({
     textSign: {
         fontSize: 18,
         fontWeight: 'bold',
-        width:"100%",
-        textAlign:"center"
+        width: "100%",
+        textAlign: "center"
     }
 });
