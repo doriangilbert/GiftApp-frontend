@@ -39,7 +39,25 @@ const AccueilStack = createStackNavigator();
 const AmisStack = createStackNavigator();
 const GroupeStack = createStackNavigator();
 const InitialStack = createStackNavigator();
+const GlobalStack = createStackNavigator();
 
+export const GlobalNav = () => {
+    return(
+        <GlobalStack.Navigator initialRouteName="InitialTabs" screenOptions={{headerShown:false}}>
+
+            <GlobalStack.Screen
+                name="InitialTabs"
+                component={InitialTabs}
+            />
+
+            <GlobalStack.Screen
+                name="BottomTabs"
+                component={BottomTabs}
+            />
+
+        </GlobalStack.Navigator>
+    )
+}
 
 export const BottomTabs = () => {
     return (

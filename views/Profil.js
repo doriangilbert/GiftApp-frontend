@@ -1,14 +1,27 @@
 //core
-
-import { Button, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
-import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-import style from '../Style';
+import { Text, View, Image, TouchableOpacity, Button, StyleSheet, StatusBar } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 //style
+import style from '../Style';
+
+
 
 export default class Profil extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    deco = async () => {
+        await AsyncStorage.removeItem("@token");
+        this.props.navigation.navigate('InitialTabs');
+        this.props.navigation.navigate('PageInitiale');
+    }
+
     render() {
         return (
             <View style={style.view}>
@@ -43,14 +56,7 @@ export default class Profil extends React.Component {
                 <View style={styles.button}>
                     <TouchableOpacity
                         style={styles.sign}
-                        onPress={() => {
-                            document.cookie = "";
-                            try {
-                                window.location.reload();
-                            } catch (e) {
-                                console.error(e);
-                            }
-                        }}
+                        onPress={this.deco}
                     >
                         <LinearGradient
                             colors={['#FF8787', '#f39a9a']}
@@ -62,14 +68,10 @@ export default class Profil extends React.Component {
                 </View>
                 <View style={styles.button}>
                     <TouchableOpacity
-                        style={styles.sign}
+                        style={[styles.sign]}
                         onPress={() => {
-                            document.cookie = "";
-                            try {
-                                window.location.reload();
-                            } catch (e) {
-                                console.error(e);
-                            }
+                            console.warn('PAS FINI');
+                            //TODO
                         }}
                     >
                         <LinearGradient
@@ -103,7 +105,9 @@ const styles = StyleSheet.create({
     },
     textSign: {
         fontSize: 17,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        width: "100%",
+        textAlign: "center"
     }
 });
 

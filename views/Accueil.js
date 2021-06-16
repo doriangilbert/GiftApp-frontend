@@ -7,6 +7,7 @@ import { AntDesign } from '@expo/vector-icons';
 import style from '../Style';
 
 export default function Accueil(props) {
+  
     return (
       <View style={style.view}>
         <StatusBar backgroundColor='#FF8787A2' barStyle="light-content" />
