@@ -36,14 +36,14 @@ const Item1 = ({ title }) => (
         style={[style.confirm, style.flexelement]}
         source={require("../assets/confirm.svg")}
       />*/}
-      <FontAwesome name="check" size={30} style={style.flexelement} />
+      <FontAwesome name="check" size={35} style={style.flexelement} />
     </Pressable>
     <Pressable onPress={() => console.log("Annuler appuyé")}>
       {/* <Image
         style={[style.cancel, style.flexelement]}
         source={require("../assets/cancel.svg")}
       /> */}
-      <FontAwesome name="times" size={30} style={style.flexelement} />
+      <FontAwesome name="times" size={35} style={style.flexelement} />
     </Pressable>
   </View>
 );
@@ -96,37 +96,37 @@ const style = {
   item: {
     backgroundColor: "transparent",
     padding: 10,
-    marginVertical: 10,
+    marginVertical: 5,
     flexDirection: "row",
     alignItems: "center"
   },
   header: {
-    fontSize: 24,
+    fontSize: 22,
     backgroundColor: "transparent"
   },
   title: {
     color: "#D74848",
-    fontSize: 24
+    fontSize: 20
   },
   photo: {
-    width: 75,
-    height: 75
+    width: 70,
+    height: 70
   },
-  confirm: {
+  /*confirm: {
     width: 39,
     height: 39
   },
   cancel: {
     width: 32,
     height: 32
-  },
+  },*/
   profil: {
     backgroundColor: "transparent",
     flexDirection: "row",
     alignItems: "center"
   },
   flexelement: {
-    marginHorizontal: 10
+    marginHorizontal: 5
   },
   btnCreerGroupe: {
     alignItems: "center",
