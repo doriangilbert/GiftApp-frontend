@@ -155,10 +155,6 @@ const Connexion = (props) => {
                             } else {
                                 console.warn("Champs vide !")
                             }
-
-                            if (false) {
-
-                            }
                         }}
                     >
                         <LinearGradient
