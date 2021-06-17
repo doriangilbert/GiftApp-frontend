@@ -33,6 +33,8 @@ import { View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { rose_main } from '../Style';
 
+
+// Création des différents types navigateurs 
 const Tab = createBottomTabNavigator();
 
 const AccueilStack = createStackNavigator();
@@ -41,6 +43,7 @@ const GroupeStack = createStackNavigator();
 const InitialStack = createStackNavigator();
 const GlobalStack = createStackNavigator();
 
+// Fonction qui gère la navigation globale de l'application, passage "InitialTabs"/"BottomTabs" 
 export const GlobalNav = () => {
     return(
         <GlobalStack.Navigator initialRouteName="BottomTabs" screenOptions={{headerShown:false}}>
@@ -59,6 +62,8 @@ export const GlobalNav = () => {
     )
 }
 
+
+// Fonction qui définit un navigateur avec des onglets de navigation en bas de l'écran, incluant les autres fonction des navigateurs de type "Stack"
 export const BottomTabs = () => {
     return (
 
@@ -88,10 +93,10 @@ export const BottomTabs = () => {
             )
             }}/>
     </Tab.Navigator>
-
     );
 }
 
+// Fonction qui gère le navigateur "Stack" de l'accueil, avec les écrans du profil notamment 
 export const AccueilStackScreen = () => {
     return(
 
@@ -124,6 +129,7 @@ export const AccueilStackScreen = () => {
     );
 }
 
+// Fonction qui gère le navigateur "Stack" de l'onglet "Amis"
 export const AmisStackScreen = () => {
     return(
         <AmisStack.Navigator
@@ -150,6 +156,7 @@ export const AmisStackScreen = () => {
     );
 }
 
+// Fonction qui gère le navigateur "Stack" de l'onglet "Groupes"
 export const GroupeStackScreen = () => {
     return(
         <GroupeStack.Navigator
@@ -206,6 +213,7 @@ export const GroupeStackScreen = () => {
     );
 }
 
+// Fonction qui gère le navigateur "Stack" des écrans avant la connexion
 export const InitialTabs = () => {
     return (
         <InitialStack.Navigator initialRouteName="PageInitiale" screenOptions={{headerShown:false}}>

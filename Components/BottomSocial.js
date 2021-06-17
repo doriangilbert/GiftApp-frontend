@@ -1,5 +1,6 @@
-import React from 'react'
+// Component graphique qu'on apercoit sur la page initial, composé des liens réseaux sociaux
 
+import React from 'react'
 
 import { View, ImageBackground, Linking } from 'react-native'
 import { SocialIcon } from 'react-native-elements'
