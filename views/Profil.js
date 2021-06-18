@@ -8,11 +8,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 //style
 import style from '../Style';
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> master
 export default class Profil extends React.Component {
 
     constructor(props) {
@@ -108,12 +103,7 @@ const styles = StyleSheet.create({
     textSign: {
         fontSize: 17,
         fontWeight: 'bold',
-<<<<<<< HEAD
         width: '100%',
         textAlign: 'center'
-=======
-        width: "100%",
-        textAlign: "center"
->>>>>>> master
     }
 });

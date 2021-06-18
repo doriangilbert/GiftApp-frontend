@@ -367,12 +367,7 @@ const styles = StyleSheet.create({
     textSign: {
         fontSize: 18,
         fontWeight: 'bold',
-<<<<<<< HEAD:views/inscription.js
         width: '100%',
         textAlign: 'center'
-=======
-        width: "100%",
-        textAlign: "center"
->>>>>>> master:views/Inscription.js
     }
 });
