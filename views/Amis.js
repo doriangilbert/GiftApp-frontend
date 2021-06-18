@@ -9,82 +9,84 @@ import React from 'react';
 
 //import style from '../Style';
 
-const DATA = [
-  {
-    index: 0,
-    title: "Mes Invitations :",
-    data: ["Dupond Dupont", "Dupond Dupont"]
-  },
-  {
-    index: 1,
-    title: "Mes Amis :",
-    data: ["Dupond Dupont", "Dupond Dupont", "Dupond Dupont", "Dupond Dupont", "Dupond Dupont", "Dupond Dupont"]
-  }
-];
+const Amis = (props) => {
 
-const Item1 = ({ title }) => (
-  <View style={style.item}>
-    <Pressable onPress={() => console.log("Profil appuyé")} style={style.profil}>
-      <Image
-        style={[style.photo, style.flexelement]}
-        source={require("../assets/photo.png")}
-      />
-      <Text style={[style.title, style.flexelement]}>{title}</Text>
-    </Pressable>
-    <Pressable onPress={() => console.log("Confirmer appuyé")}>
-      {/* <Image
-        style={[style.confirm, style.flexelement]}
-        source={require("../assets/confirm.svg")}
-      />*/}
-      <FontAwesome name="check" size={40} style={style.flexelement} />
-    </Pressable>
-    <Pressable onPress={() => console.log("Annuler appuyé")}>
-      {/* <Image
-        style={[style.cancel, style.flexelement]}
-        source={require("../assets/cancel.svg")}
-      /> */}
-      <FontAwesome name="times" size={40} style={style.flexelement} />
-    </Pressable>
-  </View>
-);
-
-const Item = ({ title }) => (
-  <View style={style.item}>
-    <Pressable onPress={() => console.log("Profil appuyé")} style={style.profil}>
-      <Image
+  const DATA = [
+    {
+      index: 0,
+      title: "Mes Invitations :",
+      data: ["Dupond Dupont", "Dupond Dupont"]
+    },
+    {
+      index: 1,
+      title: "Mes Amis :",
+      data: ["Dupond Dupont", "Dupond Dupont", "Dupond Dupont", "Dupond Dupont", "Dupond Dupont", "Dupond Dupont"]
+    }
+  ];
+  
+  const Item1 = ({ title }) => (
+    <View style={style.item}>
+      <Pressable onPress={() => {console.log("Profil appuyé"), props.navigation.navigate("ProfilAmi")}} style={style.profil}>
+        <Image
           style={[style.photo, style.flexelement]}
           source={require("../assets/photo.png")}
-      />
-      <Text style={[style.title, style.flexelement]}>{title}</Text>
-    </Pressable>
-  </View>
-);
-export default class Amis extends React.Component {
-  render() {
-    return (
-      <View style={style.view}>
-        <Pressable onPress={() => console.log("Ajouter un ami appuyé")} style={style.btnAjouterAmi}>
-          <Text style={style.txtBtnAjouterAmi}>{"Ajouter un ami"}</Text>
-        </Pressable>
-        <SectionList
-          sections={DATA}
-          keyExtractor={(item, index) => item + index}
-          renderItem={({ section, item }) => {
-            if (section.index === 0) {
-              return <Item1 title={item} />
-            }
-            else {
-              return <Item title={item} />
-            }
-          }}
-          renderSectionHeader={({ section: { title } }) => (
-            <Text style={style.header}>{title}</Text>
-          )}
         />
-      </View>
-    )
-  }
+        <Text style={[style.title, style.flexelement]}>{title}</Text>
+      </Pressable>
+      <Pressable onPress={() => {console.log("Confirmer appuyé")}}>
+        {/* <Image
+          style={[style.confirm, style.flexelement]}
+          source={require("../assets/confirm.svg")}
+        />*/}
+        <FontAwesome name="check" size={35} style={style.flexelement} />
+      </Pressable>
+      <Pressable onPress={() => {console.log("Annuler appuyé")}}>
+        {/* <Image
+          style={[style.cancel, style.flexelement]}
+          source={require("../assets/cancel.svg")}
+        /> */}
+        <FontAwesome name="times" size={35} style={style.flexelement} />
+      </Pressable>
+    </View>
+  );
+  
+  const Item = ({ title }) => (
+    <View style={style.item}>
+      <Pressable onPress={() => {console.log("Profil appuyé"), props.navigation.navigate("ProfilAmi")}} style={style.profil}>
+        <Image
+            style={[style.photo, style.flexelement]}
+            source={require("../assets/photo.png")}
+        />
+        <Text style={[style.title, style.flexelement]}>{title}</Text>
+      </Pressable>
+    </View>
+  );
+
+  return (
+    <View style={style.view}>
+      <Pressable onPress={() => {console.log("Ajouter un ami appuyé"), props.navigation.navigate("AjoutAmis")}} style={style.bouton}>
+        <Text style={style.txtBouton}>{"Ajouter un ami"}</Text>
+      </Pressable>
+      <SectionList
+        sections={DATA}
+        keyExtractor={(item, index) => item + index}
+        renderItem={({ section, item }) => {
+          if (section.index === 0) {
+            return <Item1 title={item} />
+          }
+          else {
+            return <Item title={item} />
+          }
+        }}
+        renderSectionHeader={({ section: { title } }) => (
+          <Text style={style.header}>{title}</Text>
+        )}
+      />
+    </View>
+  )
 }
+
+export default Amis;
 
 const style = {
   view: {
@@ -128,7 +130,7 @@ const style = {
   flexelement: {
     marginHorizontal: 5
   },
-  btnAjouterAmi: {
+  bouton: {
     alignItems: "center",
     justifyContent: "center",
     paddingVertical: 12,
@@ -136,10 +138,10 @@ const style = {
     borderRadius: 4,
     elevation: 3,
     backgroundColor: "#FF8787",
-    margin: 5,
+    margin: 10,
     width: "55%"
   },
-  txtBtnAjouterAmi: {
+  txtBouton: {
     fontSize: 16,
     lineHeight: 21,
     fontWeight: "bold",

@@ -9,82 +9,84 @@ import React from 'react';
 
 //import style from '../Style';
 
-const DATA = [
-  {
-    index: 0,
-    title: "Mes Invitations :",
-    data: ["Groupe", "Groupe"]
-  },
-  {
-    index: 1,
-    title: "Mes Groupes :",
-    data: ["Groupe", "Groupe", "Groupe", "Groupe", "Groupe", "Groupe"]
-  }
-];
+const MesGroupes = (props) => {
 
-const Item1 = ({ title }) => (
-  <View style={style.item}>
-    <Pressable onPress={() => console.log("Profil appuyé")} style={style.profil}>
-      <Image
-        style={[style.photo, style.flexelement]}
-        source={require("../assets/photo.png")}
-      />
-      <Text style={[style.title, style.flexelement]}>{title}</Text>
-    </Pressable>
-    <Pressable onPress={() => console.log("Confirmer appuyé")}>
-      {/* <Image
-        style={[style.confirm, style.flexelement]}
-        source={require("../assets/confirm.svg")}
-      />*/}
-      <FontAwesome name="check" size={35} style={style.flexelement} />
-    </Pressable>
-    <Pressable onPress={() => console.log("Annuler appuyé")}>
-      {/* <Image
-        style={[style.cancel, style.flexelement]}
-        source={require("../assets/cancel.svg")}
-      /> */}
-      <FontAwesome name="times" size={35} style={style.flexelement} />
-    </Pressable>
-  </View>
-);
-
-const Item = ({ title }) => (
-  <View style={style.item}>
-    <Pressable onPress={() => console.log("Profil appuyé")} style={style.profil}>
-      <Image
+  const DATA = [
+    {
+      index: 0,
+      title: "Mes Invitations :",
+      data: ["Groupe", "Groupe"]
+    },
+    {
+      index: 1,
+      title: "Mes Groupes :",
+      data: ["Groupe", "Groupe", "Groupe", "Groupe", "Groupe", "Groupe"]
+    }
+  ];
+  
+  const Item1 = ({ title }) => (
+    <View style={style.item}>
+      <Pressable onPress={() => {console.log("Profil appuyé"), props.navigation.navigate("Groupe")}} style={style.profil}>
+        <Image
           style={[style.photo, style.flexelement]}
           source={require("../assets/photo.png")}
-      />
-      <Text style={[style.title, style.flexelement]}>{title}</Text>
-    </Pressable>
-  </View>
-);
-export default class MesGroupes extends React.Component {
-  render() {
-    return (
-      <View style={style.view}>
-        <Pressable onPress={() => console.log("Créer un groupe appuyé")} style={style.btnCreerGroupe}>
-          <Text style={style.txtBtnCreerGroupe}>{"Créer un groupe"}</Text>
-        </Pressable>
-        <SectionList
-          sections={DATA}
-          keyExtractor={(item, index) => item + index}
-          renderItem={({ section, item }) => {
-            if (section.index === 0) {
-              return <Item1 title={item} />
-            }
-            else {
-              return <Item title={item} />
-            }
-          }}
-          renderSectionHeader={({ section: { title } }) => (
-            <Text style={style.header}>{title}</Text>
-          )}
         />
-      </View>
-    )
-  }
+        <Text style={[style.title, style.flexelement]}>{title}</Text>
+      </Pressable>
+      <Pressable onPress={() => {console.log("Confirmer appuyé")}}>
+        {/* <Image
+          style={[style.confirm, style.flexelement]}
+          source={require("../assets/confirm.svg")}
+        />*/}
+        <FontAwesome name="check" size={35} style={style.flexelement} />
+      </Pressable>
+      <Pressable onPress={() => {console.log("Annuler appuyé")}}>
+        {/* <Image
+          style={[style.cancel, style.flexelement]}
+          source={require("../assets/cancel.svg")}
+        /> */}
+        <FontAwesome name="times" size={35} style={style.flexelement} />
+      </Pressable>
+    </View>
+  );
+  
+  const Item = ({ title }) => (
+    <View style={style.item}>
+      <Pressable onPress={() => {console.log("Profil appuyé"), props.navigation.navigate("Groupe")}} style={style.profil}>
+        <Image
+            style={[style.photo, style.flexelement]}
+            source={require("../assets/photo.png")}
+        />
+        <Text style={[style.title, style.flexelement]}>{title}</Text>
+      </Pressable>
+    </View>
+  );
+
+  return (
+    <View style={style.view}>
+      <Pressable onPress={() => {console.log("Créer un groupe appuyé"), props.navigation.navigate("CreationGroupe")}} style={style.bouton}>
+        <Text style={style.txtBouton}>{"Créer un groupe"}</Text>
+      </Pressable>
+      <SectionList
+        sections={DATA}
+        keyExtractor={(item, index) => item + index}
+        renderItem={({ section, item }) => {
+          if (section.index === 0) {
+            return <Item1 title={item} />
+          }
+          else {
+            return <Item title={item} />
+          }
+        }}
+        renderSectionHeader={({ section: { title } }) => (
+          <Text style={style.header}>{title}</Text>
+        )}
+      />
+    </View>
+  )
 }
+
+export default MesGroupes;
 
 const style = {
   view: {
@@ -128,7 +130,7 @@ const style = {
   flexelement: {
     marginHorizontal: 5
   },
-  btnCreerGroupe: {
+  bouton: {
     alignItems: "center",
     justifyContent: "center",
     paddingVertical: 12,
@@ -136,10 +138,10 @@ const style = {
     borderRadius: 4,
     elevation: 3,
     backgroundColor: "#FF8787",
-    margin: 5,
+    margin: 10,
     width: "55%"
   },
-  txtBtnCreerGroupe: {
+  txtBouton: {
     fontSize: 16,
     lineHeight: 21,
     fontWeight: "bold",
