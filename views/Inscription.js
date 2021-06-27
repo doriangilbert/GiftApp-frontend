@@ -241,7 +241,7 @@ const Inscription = (props) => {
                         onPress={() => {
                             console.log("test envoi", state)
                             const axios = require('axios');
-                            const URL = 'http://www.giftapp.fr/backend/public/index.php/api/utilisateurs';
+                            const URL = 'http://www.giftapp.fr/GiftApp_Backend/public/api/users';
                             const aucunNull = (
                                 state.nom != null &&
                                 state.prenom != null &&
@@ -252,10 +252,9 @@ const Inscription = (props) => {
                             if (state.mdp == state.confirmMdp && aucunNull) {
                                 axios.post(URL, {
                                     "email": state.email,
-                                    "roles": [],
                                     "password": state.confirmMdp,
-                                    "nom": state.nom,
-                                    "prenom": state.prenom
+                                    "lastName": state.nom,
+                                    "firstName": state.prenom
                                 }).then((res) => {
                                     console.log(res);
                                     if (res.status == 201)

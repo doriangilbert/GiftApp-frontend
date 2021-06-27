@@ -42,9 +42,9 @@ const InitialStack = createStackNavigator();
 const GlobalStack = createStackNavigator();
 
 export const GlobalNav = () => {
-    return(
-        <GlobalStack.Navigator initialRouteName="BottomTabs" screenOptions={{headerShown:false}}>
-        {/* Changer initialRouteName="InitialTabs" en initialRouteName="BottomTabs" pour ignorer la page de connexion */}
+    return (
+        <GlobalStack.Navigator initialRouteName="InitialTabs" screenOptions={{ headerShown: false }}>
+            {/* Changer initialRouteName="InitialTabs" en initialRouteName="BottomTabs" pour ignorer la page de connexion */}
             <GlobalStack.Screen
                 name="InitialTabs"
                 component={InitialTabs}
@@ -62,42 +62,42 @@ export const GlobalNav = () => {
 export const BottomTabs = () => {
     return (
 
-    <Tab.Navigator initialRouteName="Accueil"
-        tabBarOptions={{showLabel:false, style:{backgroundColor:rose_main, height:60}}}
-        screenOptions={{headerShown:false}}
-    >
-        <Tab.Screen name="Groupes" component={GroupeStackScreen} options={{
-            tabBarIcon:({focused}) =>(
-                <View>
-                    <MaterialIcons name="groups" size={40} style={{color:focused?"white":"#D74848"}} />
-                </View>
-            )
-            }}/>
-        <Tab.Screen name="Accueil" component={AccueilStackScreen} options={{
-            tabBarIcon:({focused}) =>(
-                <View>
-                    <Entypo name="home" size={33} style={{color:focused?"white":"#D74848"}} />
-                </View>
-            )
-            }}/>
-        <Tab.Screen name="Amis" component={AmisStackScreen} options={{
-            tabBarIcon:({focused}) =>(
-                <View>
-                    <FontAwesome5 name="user-friends" size={30} style={{color:focused?"white":"#D74848"}} />
-                </View>
-            )
-            }}/>
-    </Tab.Navigator>
+        <Tab.Navigator initialRouteName="Accueil"
+            tabBarOptions={{ showLabel: false, style: { backgroundColor: rose_main, height: 60 } }}
+            screenOptions={{ headerShown: false }}
+        >
+            <Tab.Screen name="Groupes" component={GroupeStackScreen} options={{
+                tabBarIcon: ({ focused }) => (
+                    <View>
+                        <MaterialIcons name="groups" size={40} style={{ color: focused ? "white" : "#D74848" }} />
+                    </View>
+                )
+            }} />
+            <Tab.Screen name="Accueil" component={AccueilStackScreen} options={{
+                tabBarIcon: ({ focused }) => (
+                    <View>
+                        <Entypo name="home" size={33} style={{ color: focused ? "white" : "#D74848" }} />
+                    </View>
+                )
+            }} />
+            <Tab.Screen name="Amis" component={AmisStackScreen} options={{
+                tabBarIcon: ({ focused }) => (
+                    <View>
+                        <FontAwesome5 name="user-friends" size={30} style={{ color: focused ? "white" : "#D74848" }} />
+                    </View>
+                )
+            }} />
+        </Tab.Navigator>
 
     );
 }
 
 export const AccueilStackScreen = () => {
-    return(
+    return (
 
         <AccueilStack.Navigator
             initialRouteName="Accueil"
-            screenOptions={{headerShown:false}}
+            screenOptions={{ headerShown: false }}
         >
 
             <AccueilStack.Screen
@@ -125,10 +125,10 @@ export const AccueilStackScreen = () => {
 }
 
 export const AmisStackScreen = () => {
-    return(
+    return (
         <AmisStack.Navigator
             initialRouteName="Amis"
-            screenOptions={{headerShown:false}}
+            screenOptions={{ headerShown: false }}
         >
 
             <AmisStack.Screen
@@ -151,10 +151,10 @@ export const AmisStackScreen = () => {
 }
 
 export const GroupeStackScreen = () => {
-    return(
+    return (
         <GroupeStack.Navigator
             initialRouteName="MesGroupes"
-            screenOptions={{headerShown:false}}
+            screenOptions={{ headerShown: false }}
         >
 
             <GroupeStack.Screen
@@ -208,7 +208,7 @@ export const GroupeStackScreen = () => {
 
 export const InitialTabs = () => {
     return (
-        <InitialStack.Navigator initialRouteName="PageInitiale" screenOptions={{headerShown:false}}>
+        <InitialStack.Navigator initialRouteName="PageInitiale" screenOptions={{ headerShown: false }}>
 
             <InitialStack.Screen
                 name="PageInitiale"

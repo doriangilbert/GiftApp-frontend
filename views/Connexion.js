@@ -127,7 +127,7 @@ const Connexion = (props) => {
                         style={styles.signIn}
                         onPress={() => {
                             let axios = require('axios');
-                            const URL = 'http://www.giftapp.fr/backend/public/index.php/api/login';
+                            const URL = 'http://www.giftapp.fr/GiftApp_Backend/public/api/login';
                             const DATA = {
                                 "email": data.email,
                                 "password": data.mdp
