@@ -21,12 +21,12 @@ const AjoutAmis = (props) => {
   
   const Item = ({ title }) => (
     <View style={style.item}>
-      <Pressable onPress={() => {console.log("Profil appuyé")}} style={style.profil}>
+      <Pressable onPress={() => {console.log("Profil appuyé")}} style={style.itemelement}>
         <Image
-          style={[style.photo, style.flexelement]}
+          style={[style.itemphoto, style.flexelement]}
           source={require("../assets/photo.png")}
         />
-        <Text style={[style.title, style.flexelement]}>{title}</Text>
+        <Text style={[style.itemtitle, style.flexelement]}>{title}</Text>
       </Pressable>
       <Pressable onPress={() => {console.log("Ajouter appuyé"), props.navigation.navigate("Amis")}}>
         {/* <Image
@@ -79,11 +79,11 @@ const style = {
     fontSize: 22,
     backgroundColor: "transparent"
   },
-  title: {
+  itemtitle: {
     color: "#D74848",
     fontSize: 20
   },
-  photo: {
+  itemphoto: {
     width: 70,
     height: 70
   },
@@ -91,7 +91,7 @@ const style = {
     width: 39,
     height: 39
   },*/
-  profil: {
+  itemelement: {
     backgroundColor: "transparent",
     flexDirection: "row",
     alignItems: "center"

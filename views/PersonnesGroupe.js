@@ -21,12 +21,12 @@ const PersonnesGroupe = (props) => {
   
   const Item = ({ title }) => (
     <View style={style.item}>
-      <Pressable onPress={() => {console.log("Profil appuyé"), props.navigation.navigate("ProfilMembre")}} style={style.profil}>
+      <Pressable onPress={() => {console.log("Profil appuyé"), props.navigation.navigate("ProfilMembre")}} style={style.itemelement}>
         <Image
-          style={[style.photo, style.flexelement]}
+          style={[style.itemphoto, style.flexelement]}
           source={require("../assets/photo.png")}
         />
-        <Text style={[style.title, style.flexelement]}>{title}</Text>
+        <Text style={[style.itemtitle, style.flexelement]}>{title}</Text>
       </Pressable>
       <Pressable onPress={() => {console.log("Supprimer appuyé")}}>
         {/* <Image
@@ -77,11 +77,11 @@ const style = {
     fontSize: 22,
     backgroundColor: "transparent"
   },
-  title: {
+  itemtitle: {
     color: "#D74848",
     fontSize: 20
   },
-  photo: {
+  itemphoto: {
     width: 70,
     height: 70
   },
@@ -89,7 +89,7 @@ const style = {
     width: 32,
     height: 32
   },*/
-  profil: {
+  itemelement: {
     backgroundColor: "transparent",
     flexDirection: "row",
     alignItems: "center"

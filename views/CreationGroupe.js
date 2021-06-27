@@ -51,11 +51,17 @@ const style = {
     marginBottom: 20
   },
   txtChampTexte: {
+    color: "#D74848",
     marginTop: 15, 
     fontSize: 20
   },
   champTexte: {
-    marginBottom: 20
+    marginVertical: 10,
+    padding: 10,
+    width: "70%",
+    borderWidth: 1, 
+    borderColor: "#D74848",
+    borderRadius: 10
   },
   btnValider: {
     marginTop: 20
