@@ -43,7 +43,7 @@ const AjoutCadeau = (props) => {
           style={style.champTexte}
           autoCapitalize="none"
       />
-      <Pressable style={style.btnValider} onPress={() => {console.log("Valider appuyé"), props.navigation.navigate("ProfilMembre")}}>
+      <Pressable style={style.btnValider} onPress={() => {console.log("Valider appuyé"), props.navigation.navigate("ListeCadeau")}}>
         <FontAwesome name="check" size={60} />
       </Pressable>
     </View>
@@ -61,7 +61,7 @@ const style = {
   },
   photo: {
     width: 150,
-    height: 150, 
+    height: 150,
     marginBottom: 20
   },
   title: {
@@ -70,14 +70,14 @@ const style = {
   },
   txtChampTexte: {
     color: "#D74848",
-    marginTop: 15, 
+    marginTop: 15,
     fontSize: 20
   },
   champTexte: {
     marginVertical: 10,
     padding: 10,
     width: "70%",
-    borderWidth: 1, 
+    borderWidth: 1,
     borderColor: "#D74848",
     borderRadius: 10
   },

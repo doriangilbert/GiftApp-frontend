@@ -1,7 +1,7 @@
 //core
 
-import { Image, Pressable, Text, View } from 'react-native';
-
+import { Image, Pressable, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 
 //style
@@ -17,12 +17,34 @@ const Groupe = (props) => {
           source={require("../assets/photo.png")}
       />
       <Text style={{fontSize:0, fontWeight:"normal", color:"transparent"}}></Text>
-      <Pressable onPress={() => {console.log("Membres du groupe appuyé"), props.navigation.navigate("PersonnesGroupe")}} style={style.bouton}>
-        <Text style={style.txtBouton}>{"Membres du groupe"}</Text>
-      </Pressable>
-      <Pressable onPress={() => {console.log("Supprimer le groupe appuyé"), props.navigation.navigate("MesGroupes")}} style={style.bouton}>
-        <Text style={style.txtBouton}>{"Supprimer le groupe"}</Text>
-      </Pressable>
+
+      <View style={styles.button}>
+          <TouchableOpacity
+              style={styles.sign}
+              onPress={() => { console.log("Membres du groupe appuyé"), props.navigation.navigate("PersonnesGroupe") }}
+          >
+              <LinearGradient
+                  colors={['#FF8787', '#f39a9a']}
+                  style={styles.sign}
+              >
+                  <Text style={[styles.textSign, { color: '#fff' }]}>Membres du groupe</Text>
+              </LinearGradient>
+          </TouchableOpacity>
+      </View>
+
+      <View style={styles.button}>
+          <TouchableOpacity
+              style={styles.sign}
+              onPress={() => { console.log("Supprimer le groupe appuyé"), props.navigation.navigate("MesGroupes") }}
+          >
+              <LinearGradient
+                  colors={['#FF8787', '#f39a9a']}
+                  style={styles.sign}
+              >
+                  <Text style={[styles.textSign, { color: '#fff' }]}>Supprimer le groupe</Text>
+              </LinearGradient>
+          </TouchableOpacity>
+      </View>
     </View>
   )
 }
@@ -42,7 +64,7 @@ const style = {
   },
   photo: {
     width: 150,
-    height: 150, 
+    height: 150,
     marginTop: 30,
     marginBottom: 20
   },
@@ -67,3 +89,26 @@ const style = {
     textAlign: "center"
   },
 };
+
+const styles = StyleSheet.create({
+    button: {
+        alignItems: 'center',
+        width: "50%",
+        borderRadius: 10,
+        marginBottom: 10,
+        marginTop: 15
+    },
+    sign: {
+        width: '100%',
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10
+    },
+    textSign: {
+        fontSize: 17,
+        fontWeight: 'bold',
+        width: '100%',
+        textAlign: 'center'
+    }
+});

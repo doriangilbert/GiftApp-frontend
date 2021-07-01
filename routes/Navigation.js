@@ -29,6 +29,7 @@ import PersonnesGroupe from '../views/PersonnesGroupe';
 import Profil from '../views/Profil'
 import ProfilAmi from '../views/ProfilAmi';
 import ProfilMembre from '../views/ProfilMembre';
+import ListeCadeau from '../views/ListeCadeau';
 import { View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { rose_main } from '../Style';
@@ -43,7 +44,7 @@ const GlobalStack = createStackNavigator();
 
 export const GlobalNav = () => {
     return (
-        <GlobalStack.Navigator initialRouteName="InitialTabs" screenOptions={{ headerShown: false }}>
+        <GlobalStack.Navigator initialRouteName="BottomTabs" screenOptions={{ headerShown: false }}>
             {/* Changer initialRouteName="InitialTabs" en initialRouteName="BottomTabs" pour ignorer la page de connexion */}
             <GlobalStack.Screen
                 name="InitialTabs"
@@ -116,6 +117,21 @@ export const AccueilStackScreen = () => {
             />
 
             <AccueilStack.Screen
+                name="ListeCadeau"
+                component={ListeCadeau}
+            />
+
+            <AccueilStack.Screen
+                name="DetailCadeau"
+                component={DetailCadeau}
+            />
+
+            <AccueilStack.Screen
+                name="AjoutCadeau"
+                component={AjoutCadeau}
+            />
+
+            <AccueilStack.Screen
                 name="Parametres"
                 component={Parametres}
             />
@@ -178,6 +194,11 @@ export const GroupeStackScreen = () => {
             />
 
             <GroupeStack.Screen
+                name="ProfilMembre"
+                component={ProfilMembre}
+            />
+
+            <GroupeStack.Screen
                 name="AjoutMembre"
                 component={AjoutMembre}
             />
@@ -185,21 +206,6 @@ export const GroupeStackScreen = () => {
             <GroupeStack.Screen
                 name="AjoutMembreInactif"
                 component={AjoutMembreInactif}
-            />
-
-            <GroupeStack.Screen
-                name="ProfilMembre"
-                component={ProfilMembre}
-            />
-
-            <GroupeStack.Screen
-                name="DetailCadeau"
-                component={DetailCadeau}
-            />
-
-            <GroupeStack.Screen
-                name="AjoutCadeau"
-                component={AjoutCadeau}
             />
 
         </GroupeStack.Navigator>

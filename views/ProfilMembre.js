@@ -1,7 +1,7 @@
 //core
 
-import { Image, Pressable, SectionList, Text, TextInput, View } from 'react-native';
-
+import { Image, Pressable, SectionList, Text, TextInput, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons';
 import React from 'react';
 
@@ -18,7 +18,7 @@ const ProfilMembre = (props) => {
       data: ["Cadeau", "Cadeau", "Cadeau", "Cadeau", "Cadeau", "Cadeau"]
     }
   ];
-  
+
   const Item = ({ title }) => (
     <View style={style.item}>
       <Pressable onPress={() => {console.log("Cadeau appuyé"), props.navigation.navigate("DetailCadeau")}} style={style.itemelement}>
@@ -48,21 +48,7 @@ const ProfilMembre = (props) => {
           source={require("../assets/photo.png")}
       />
       <Text style={{fontSize:0, fontWeight:"normal", color:"transparent"}}></Text>
-      <Text style={style.title}>Capitaine Haddock</Text>
-      <Text style={style.description}>“Tonnerre de Brest ! Mille millions de mille sabords !”</Text>
-      <SectionList
-        sections={DATA}
-        keyExtractor={(item, index) => item + index}
-        renderItem={({ section, item }) => {
-          return <Item title={item} />
-        }}
-        renderSectionHeader={({ section: { title } }) => (
-          <Text style={style.header}>{title}</Text>
-        )}
-      />
-      <Pressable style={style.btnValider} onPress={() => {console.log("Valider appuyé"), props.navigation.navigate("AjoutCadeau")}}>
-        <FontAwesome name="plus-circle" size={60} />
-      </Pressable>
+      <Text style={style.title}>Dupond Dupond</Text>
     </View>
   )
 }
@@ -82,7 +68,7 @@ const style = {
   },
   photo: {
     width: 150,
-    height: 150, 
+    height: 150,
     marginTop: 30,
     marginBottom: 20
   },
@@ -143,8 +129,31 @@ const style = {
     marginVertical: 20,
     padding: 10,
     width: "20%",
-    borderWidth: 1, 
+    borderWidth: 1,
     borderColor: "#D74848",
     borderRadius: 10
   }
 };
+
+const styles = StyleSheet.create({
+    button: {
+        alignItems: 'center',
+        width: "50%",
+        borderRadius: 10,
+        marginBottom: 10,
+        marginTop: 15
+    },
+    sign: {
+        width: '100%',
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10
+    },
+    textSign: {
+        fontSize: 17,
+        fontWeight: 'bold',
+        width: '100%',
+        textAlign: 'center'
+    }
+});

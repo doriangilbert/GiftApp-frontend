@@ -295,7 +295,6 @@ export default Inscription;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
         backgroundColor: '#FF8787A2',
     },
     header: {
