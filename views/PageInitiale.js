@@ -17,7 +17,7 @@ export default class PageInitiale extends React.Component {
     }
     async componentDidMount() {
         const token = await AsyncStorage.getItem("@token");
-        //console.log('token: ', token);
+        console.log('token: ', token);
         if(token != null)
             this.props.navigation.navigate('BottomTabs');
     }
