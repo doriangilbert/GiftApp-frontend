@@ -1,13 +1,8 @@
-//core
-
 import { Image, Pressable, SectionList, Text, TextInput, View } from 'react-native';
 
 import { FontAwesome } from '@expo/vector-icons';
 import React from 'react';
-
-//style
-
-//import style from '../Style';
+import style from '../Style';
 
 const AjoutAmis = (props) => {
 
@@ -61,6 +56,7 @@ const AjoutAmis = (props) => {
 
 export default AjoutAmis;
 
+{/*
 const style = {
   view: {
     flex: 1,
@@ -87,10 +83,10 @@ const style = {
     width: 70,
     height: 70
   },
-  /*confirm: {
+  confirm: {
     width: 39,
     height: 39
-  },*/
+  },
   itemelement: {
     backgroundColor: "transparent",
     flexDirection: "row",
@@ -108,3 +104,4 @@ const style = {
     borderRadius: 10
   }
 };
+*/}

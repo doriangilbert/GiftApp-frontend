@@ -1,13 +1,9 @@
-//core
+import { Image, Pressable, SectionList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-import { Image, Pressable, SectionList, Text, TextInput, View, StyleSheet, TouchableOpacity } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-
-//style
-
-//import style from '../Style';
+import style from '../Style';
 
 const AjoutMembre = (props) => {
 
@@ -55,16 +51,16 @@ const AjoutMembre = (props) => {
           <Text style={style.header}>{title}</Text>
         )}
       />
-      <View style={styles.button}>
+      <View style={style.button}>
           <TouchableOpacity
-              style={styles.sign}
+              style={style.sign}
               onPress={() => { console.log("Ajouter un membre inactif appuyé"), props.navigation.navigate("AjoutMembreInactif") }}
           >
               <LinearGradient
                   colors={['#FF8787', '#f39a9a']}
-                  style={styles.sign}
+                  style={style.sign}
               >
-                  <Text style={[styles.textSign, { color: '#fff' }]}>Ajouter un membre inactif</Text>
+                  <Text style={[style.textSign, { color: '#fff' }]}>Ajouter un membre inactif</Text>
               </LinearGradient>
           </TouchableOpacity>
       </View>
@@ -74,6 +70,7 @@ const AjoutMembre = (props) => {
 
 export default AjoutMembre;
 
+{/*
 const style = {
   view: {
     flex: 1,
@@ -100,10 +97,10 @@ const style = {
     width: 70,
     height: 70
   },
-  /*confirm: {
+  confirm: {
     width: 39,
     height: 39
-  },*/
+  },
   itemelement: {
     backgroundColor: "transparent",
     flexDirection: "row",
@@ -164,3 +161,4 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     }
 });
+*/}

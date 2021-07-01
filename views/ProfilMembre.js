@@ -1,13 +1,9 @@
-//core
+import { Image, Pressable, SectionList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-import { Image, Pressable, SectionList, Text, TextInput, View, StyleSheet, TouchableOpacity } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-
-//style
-
-//import style from '../Style';
+import style from '../Style';
 
 const ProfilMembre = (props) => {
 
@@ -44,7 +40,7 @@ const ProfilMembre = (props) => {
 
   return (
     <View style={style.view}>
-      <Image style={style.photo}
+      <Image style={style.mainphotoprofil}
           source={require("../assets/photo.png")}
       />
       <Text style={{fontSize:0, fontWeight:"normal", color:"transparent"}}></Text>
@@ -55,6 +51,7 @@ const ProfilMembre = (props) => {
 
 export default ProfilMembre;
 
+{/*
 const style = {
   view: {
     flex: 1,
@@ -66,7 +63,7 @@ const style = {
     color: "#D74848",
     fontSize: 30
   },
-  photo: {
+  mainphotoprofil: {
     width: 150,
     height: 150,
     marginTop: 30,
@@ -157,3 +154,4 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     }
 });
+*/}

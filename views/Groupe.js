@@ -1,47 +1,43 @@
-//core
+import { Image, Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import { Image, Pressable, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-
-//style
-
-//import style from '../Style';
+import style from '../Style';
 
 const Groupe = (props) => {
 
   return (
     <View style={style.view}>
       <Text style={style.title}>Groupe Haddock</Text>
-      <Image style={style.photo}
+      <Image style={style.mainphotoprofil}
           source={require("../assets/photo.png")}
       />
       <Text style={{fontSize:0, fontWeight:"normal", color:"transparent"}}></Text>
 
-      <View style={styles.button}>
+      <View style={style.button}>
           <TouchableOpacity
-              style={styles.sign}
+              style={style.sign}
               onPress={() => { console.log("Membres du groupe appuyé"), props.navigation.navigate("PersonnesGroupe") }}
           >
               <LinearGradient
                   colors={['#FF8787', '#f39a9a']}
-                  style={styles.sign}
+                  style={style.sign}
               >
-                  <Text style={[styles.textSign, { color: '#fff' }]}>Membres du groupe</Text>
+                  <Text style={[style.textSign, { color: '#fff' }]}>Membres du groupe</Text>
               </LinearGradient>
           </TouchableOpacity>
       </View>
 
-      <View style={styles.button}>
+      <View style={style.button}>
           <TouchableOpacity
-              style={styles.sign}
+              style={style.sign}
               onPress={() => { console.log("Supprimer le groupe appuyé"), props.navigation.navigate("MesGroupes") }}
           >
               <LinearGradient
                   colors={['#FF8787', '#f39a9a']}
-                  style={styles.sign}
+                  style={style.sign}
               >
-                  <Text style={[styles.textSign, { color: '#fff' }]}>Supprimer le groupe</Text>
+                  <Text style={[style.textSign, { color: '#fff' }]}>Supprimer le groupe</Text>
               </LinearGradient>
           </TouchableOpacity>
       </View>
@@ -51,6 +47,7 @@ const Groupe = (props) => {
 
 export default Groupe;
 
+{/*
 const style = {
   view: {
     flex: 1,
@@ -62,7 +59,7 @@ const style = {
     color: "#D74848",
     fontSize: 30
   },
-  photo: {
+  mainphotoprofil: {
     width: 150,
     height: 150,
     marginTop: 30,
@@ -112,3 +109,4 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     }
 });
+*/}

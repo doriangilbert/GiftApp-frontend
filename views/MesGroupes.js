@@ -1,13 +1,9 @@
-//core
+import { Image, Pressable, SectionList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import { Image, Pressable, SectionList, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-
-//style
-
-//import style from '../Style';
+import style from '../Style';
 
 const MesGroupes = (props) => {
 
@@ -64,16 +60,16 @@ const MesGroupes = (props) => {
 
   return (
     <View style={style.view}>
-        <View style={styles.button}>
+        <View style={style.button}>
             <TouchableOpacity
-                style={styles.sign}
+                style={style.sign}
                 onPress={() => { console.log("Créer un groupe appuyé"), props.navigation.navigate("CreationGroupe") }}
             >
                 <LinearGradient
                     colors={['#FF8787', '#f39a9a']}
-                    style={styles.sign}
+                    style={style.sign}
                 >
-                    <Text style={[styles.textSign, { color: '#fff' }]}>Créer un groupe</Text>
+                    <Text style={[style.textSign, { color: '#fff' }]}>Créer un groupe</Text>
                 </LinearGradient>
             </TouchableOpacity>
         </View>
@@ -99,6 +95,7 @@ const MesGroupes = (props) => {
 
 export default MesGroupes;
 
+{/*
 const style = {
   view: {
     flex: 1,
@@ -125,14 +122,14 @@ const style = {
     width: 70,
     height: 70
   },
-  /*confirm: {
+  confirm: {
     width: 39,
     height: 39
   },
   cancel: {
     width: 32,
     height: 32
-  },*/
+  },
   itemelement: {
     backgroundColor: "transparent",
     flexDirection: "row",
@@ -185,3 +182,4 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     }
 });
+*/}

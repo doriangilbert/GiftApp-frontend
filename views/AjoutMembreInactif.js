@@ -1,19 +1,14 @@
-//core
-
 import { Image, Pressable, Text, TextInput, View } from 'react-native';
 
 import { FontAwesome } from '@expo/vector-icons';
 import React from 'react';
-
-//style
-
-//import style from '../Style';
+import style from '../Style';
 
 const AjoutMembreInactif = (props) => {
 
   return (
     <View style={style.view}>
-      <Image style={style.photo}
+      <Image style={style.mainphoto}
           source={require("../assets/photo.png")}
       />
       <Text style={{fontSize:0, fontWeight:"normal", color:"transparent"}}></Text>
@@ -44,6 +39,7 @@ const AjoutMembreInactif = (props) => {
 
 export default AjoutMembreInactif;
 
+{/*
 const style = {
   view: {
     flex: 1,
@@ -51,7 +47,7 @@ const style = {
     alignItems: "center",
     backgroundColor: "#FEFCF3"
   },
-  photo: {
+  mainphoto: {
     width: 150,
     height: 150, 
     marginBottom: 20
@@ -73,3 +69,4 @@ const style = {
     marginTop: 20
   }
 };
+*/}

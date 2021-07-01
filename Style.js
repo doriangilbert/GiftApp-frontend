@@ -4,6 +4,7 @@ export default StyleSheet.create({
     view: {
         flex: 1,
         alignItems: 'center',
+        justifyContent: "center",
         backgroundColor:"#FFFCF3"
     },
     btn_style:{
@@ -84,6 +85,141 @@ export default StyleSheet.create({
         flex:1,
         justifyContent:'flex-end',
         marginBottom:10
+    },
+    //Partie Amis/Groupes + Profil et ListeCadeaux
+    item: {
+        backgroundColor: "transparent",
+        padding: 10,
+        marginVertical: 5,
+        flexDirection: "row",
+        alignItems: "center"
+    },
+    header: {
+        fontSize: 22,
+        backgroundColor: "transparent"
+    },
+    itemtitle: {
+        color: "#D74848",
+        fontSize: 20
+    },
+    itemphoto: {
+        width: 70,
+        height: 70
+    },
+    /*confirm: {
+    width: 39,
+    height: 39
+    },
+    cancel: {
+    width: 32,
+    height: 32
+    },*/
+    itemelement: {
+        backgroundColor: "transparent",
+        flexDirection: "row",
+        alignItems: "center"
+    },
+    flexelement: {
+        marginHorizontal: 5
+    },
+    bouton: {
+        alignItems: "center",
+        justifyContent: "center",
+        paddingVertical: 12,
+        paddingHorizontal: "10%",
+        borderRadius: 4,
+        elevation: 3,
+        backgroundColor: "#FF8787",
+        margin: 10,
+        width: "55%"
+    },
+    txtBouton: {
+        fontSize: 16,
+        lineHeight: 21,
+        fontWeight: "bold",
+        letterSpacing: 0.25,
+        color: "#FFFFFF",
+        width: "100%",
+        textAlign: "center"
+    },
+    button: {
+        alignItems: 'center',
+        width: "50%",
+        borderRadius: 10,
+        marginBottom: 10,
+        marginTop: 15
+    },
+    sign: {
+        width: '100%',
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10
+    },
+    textSign: {
+        fontSize: 17,
+        fontWeight: 'bold',
+        width: '100%',
+        textAlign: 'center'
+    },
+    mainphoto: {
+        width: 150,
+        height: 150, 
+        marginBottom: 20
+    },
+    txtChampTexte: {
+        color: "#D74848",
+        marginTop: 15, 
+        fontSize: 20
+    },
+    champTexte: {
+        marginVertical: 10,
+        padding: 10,
+        width: "70%",
+        borderWidth: 1, 
+        borderColor: "#D74848",
+        borderRadius: 10
+    },
+    btnValider: {
+        marginTop: 20
+    },
+    champRecherche: {
+        marginVertical: 20,
+        padding: 10,
+        width: "70%",
+        borderWidth: 1,
+        borderColor: "#D74848",
+        borderRadius: 10
+    },
+    title: {
+        color: "#D74848",
+        fontSize: 30,
+        marginBottom: 5
+    },
+    mainphotoprofil: {
+        width: 150,
+        height: 150,
+        marginTop: 30,
+        marginBottom: 20
+    },
+    description: {
+        color: "#D74848",
+        fontSize: 20,
+        margin: 20,
+        width: "60%"
+    },
+    champParticipation: {
+        marginVertical: 20,
+        padding: 10,
+        width: "20%",
+        borderWidth: 1,
+        borderColor: "#D74848",
+        borderRadius: 10
+    },
+    text: {
+        color: "#D74848",
+        fontSize: 20,
+        margin: 20
     }
 })
 

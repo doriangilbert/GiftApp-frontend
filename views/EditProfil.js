@@ -1,12 +1,14 @@
 //core
-import React from 'react';
-import { View, Image, TextInput, Text, StatusBar } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+
+import { Image, StatusBar, Text, TextInput, View } from 'react-native';
 
 import { FontAwesome } from '@expo/vector-icons';
+import React from 'react';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import style from '../Style';
 
 //style
-import style from '../Style';
+
 
 export default class EditProfil extends React.Component {
   render() {

@@ -1,10 +1,13 @@
 //core
-import React from 'react';
-import { Text, View, Image, TouchableWithoutFeedback, StatusBar } from 'react-native';
+
+import { Image, StatusBar, Text, TouchableWithoutFeedback, View } from 'react-native';
+
 import { AntDesign } from '@expo/vector-icons';
+import React from 'react';
+import style from '../Style';
 
 //style
-import style from '../Style';
+
 
 export default function Accueil(props) {
   

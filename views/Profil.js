@@ -1,11 +1,8 @@
-//core
-import React from 'react';
-import { Text, View, Image, TouchableOpacity, Button, StyleSheet, StatusBar, ScrollView } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { Button, Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-
-//style
+import { LinearGradient } from 'expo-linear-gradient';
+import React from 'react';
 import style from '../Style';
 
 export default class Profil extends React.Component {
@@ -25,57 +22,57 @@ export default class Profil extends React.Component {
             <View style={style.view}>
 
                 <StatusBar backgroundColor='#FF8787A2' barStyle="light-content" />
-                <Image style={[style.photo, { height: 200, marginTop: "15%" }]}
+                <Image style={style.mainphotoprofil}
                     source={require("../assets/photo.png")}
                 />
 
 
-                <Text style={style.nom_prenom_M}> Dupond Dupond</Text>
+                <Text style={style.title}> Dupond Dupond</Text>
 
 
-                <Text style={style.desc_profil}>“-Motus et bouche cousue : c’est notre devise. -Oui, botus et mouche cousue : c’est votre denise.”“-Motus et bouche cousue : c’est notre devise. -Oui, botus et mouche cousue : c’est votre denise.”</Text>
+                <Text style={style.description}>“-Motus et bouche cousue : c’est notre devise. -Oui, botus et mouche cousue : c’est votre denise.”“-Motus et bouche cousue : c’est notre devise. -Oui, botus et mouche cousue : c’est votre denise.”</Text>
 
 
-                <Text style={style.mail}>duponddupont@gmail.com</Text>
+                <Text style={style.text}>duponddupont@gmail.com</Text>
 
-                <View style={styles.button}>
+                <View style={style.button}>
                     <TouchableOpacity
-                        style={styles.sign}
+                        style={style.sign}
                         onPress={() => { this.props.navigation.navigate('EditProfil') }}
                     >
                         <LinearGradient
                             colors={['#FF8787', '#f39a9a']}
-                            style={styles.sign}
+                            style={style.sign}
                         >
-                            <Text style={[styles.textSign, { color: '#fff' }]}>Editer mon profil</Text>
+                            <Text style={[style.textSign, { color: '#fff' }]}>Editer mon profil</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.button}>
+                <View style={style.button}>
                     <TouchableOpacity
-                        style={[styles.sign]}
+                        style={[style.sign]}
                         onPress={() => {
                             this.props.navigation.navigate('ListeCadeau')
                         }}
                     >
                         <LinearGradient
                             colors={['#FF8787', '#f39a9a']}
-                            style={styles.sign}
+                            style={style.sign}
                         >
-                            <Text style={[styles.textSign, { color: '#fff' }]}>Consulter liste de cadeaux</Text>
+                            <Text style={[style.textSign, { color: '#fff' }]}>Consulter liste de cadeaux</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.button}>
+                <View style={style.button}>
                     <TouchableOpacity
-                        style={styles.sign}
+                        style={style.sign}
                         onPress={this.deco}
                     >
                         <LinearGradient
                             colors={['#FF8787', '#f39a9a']}
-                            style={styles.sign}
+                            style={style.sign}
                         >
-                            <Text style={[styles.textSign, { color: '#fff' }]}>Déconnexion</Text>
+                            <Text style={[style.textSign, { color: '#fff' }]}>Déconnexion</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>
@@ -84,6 +81,7 @@ export default class Profil extends React.Component {
     }
 }
 
+{/*
 const styles = StyleSheet.create({
     view: {
         flex: 1,
@@ -111,3 +109,4 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     }
 });
+*/}

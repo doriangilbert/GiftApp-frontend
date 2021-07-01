@@ -1,33 +1,29 @@
-//core
+import { Image, Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import { Image, Pressable, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-
-//style
-
-//import style from '../Style';
+import style from '../Style';
 
 const ProfilAmi = (props) => {
 
   return (
     <View style={style.view}>
-      <Image style={style.photo}
+      <Image style={style.mainphotoprofil}
           source={require("../assets/photo.png")}
       />
       <Text style={{fontSize:0, fontWeight:"normal", color:"transparent"}}></Text>
       <Text style={style.title}>Capitaine Haddock</Text>
       <Text style={style.description}>“Tonnerre de Brest ! Mille millions de mille sabords !”</Text>
-      <View style={styles.button}>
+      <View style={style.button}>
           <TouchableOpacity
-              style={styles.sign}
+              style={style.sign}
               onPress={() => { console.log("Supprimer de mes amis appuyé"), props.navigation.navigate("Amis") }}
           >
               <LinearGradient
                   colors={['#FF8787', '#f39a9a']}
-                  style={styles.sign}
+                  style={style.sign}
               >
-                  <Text style={[styles.textSign, { color: '#fff' }]}>Supprimer de mes amis</Text>
+                  <Text style={[style.textSign, { color: '#fff' }]}>Supprimer de mes amis</Text>
               </LinearGradient>
           </TouchableOpacity>
       </View>
@@ -37,6 +33,7 @@ const ProfilAmi = (props) => {
 
 export default ProfilAmi;
 
+{/*
 const style = {
   view: {
     flex: 1,
@@ -49,7 +46,7 @@ const style = {
     fontSize: 30,
     marginBottom: 5
   },
-  photo: {
+  mainphotoprofil: {
     width: 150,
     height: 150,
     marginTop: 30,
@@ -105,3 +102,4 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     }
 });
+*/}
