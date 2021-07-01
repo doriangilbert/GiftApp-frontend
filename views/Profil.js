@@ -1,14 +1,12 @@
 //core
 import React from 'react';
-import { Text, View, Image, TouchableOpacity, Button, StyleSheet, StatusBar } from 'react-native';
+import { Text, View, Image, TouchableOpacity, Button, StyleSheet, StatusBar, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 //style
 import style from '../Style';
-
-
 
 export default class Profil extends React.Component {
 
@@ -55,6 +53,21 @@ export default class Profil extends React.Component {
                 </View>
                 <View style={styles.button}>
                     <TouchableOpacity
+                        style={[styles.sign]}
+                        onPress={() => {
+                            this.props.navigation.navigate('ListeCadeau')
+                        }}
+                    >
+                        <LinearGradient
+                            colors={['#FF8787', '#f39a9a']}
+                            style={styles.sign}
+                        >
+                            <Text style={[styles.textSign, { color: '#fff' }]}>Consulter liste de cadeaux</Text>
+                        </LinearGradient>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.button}>
+                    <TouchableOpacity
                         style={styles.sign}
                         onPress={this.deco}
                     >
@@ -66,29 +79,17 @@ export default class Profil extends React.Component {
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.button}>
-                    <TouchableOpacity
-                        style={[styles.sign]}
-                        onPress={() => {
-                            console.warn('PAS FINI');
-                            //TODO
-                        }}
-                    >
-                        <LinearGradient
-                            colors={['#FF8787', '#f39a9a']}
-                            style={styles.sign}
-                        >
-                            <Text style={[styles.textSign, { color: '#fff' }]}>Supprimer mon compte</Text>
-                        </LinearGradient>
-                    </TouchableOpacity>
-                </View>
-            </View >
+            </View>
         )
     }
 }
 
-
 const styles = StyleSheet.create({
+    view: {
+        flex: 1,
+        backgroundColor:"#FFFCF3",
+        alignItems: 'center'
+    },
     button: {
         alignItems: 'center',
         width: "50%",
@@ -106,8 +107,7 @@ const styles = StyleSheet.create({
     textSign: {
         fontSize: 17,
         fontWeight: 'bold',
-        width: "100%",
-        textAlign: "center"
+        width: '100%',
+        textAlign: 'center'
     }
 });
-

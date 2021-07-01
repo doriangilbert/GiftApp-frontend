@@ -9,42 +9,59 @@ import React from 'react';
 
 //import style from '../Style';
 
-const AjoutMembre = (props) => {
+const ProfilMembre = (props) => {
 
   const DATA = [
     {
       index: 0,
-      title: "",
-      data: ["Dupond Dupont", "Dupond Dupont", "Dupond Dupont", "Dupond Dupont", "Dupond Dupont", "Dupond Dupont"]
+      title: "Liste de cadeaux :",
+      data: ["Cadeau", "Cadeau", "Cadeau", "Cadeau", "Cadeau", "Cadeau"]
     }
   ];
 
   const Item = ({ title }) => (
     <View style={style.item}>
-      <Pressable onPress={() => {console.log("Profil appuyé")}} style={style.itemelement}>
+      <Pressable onPress={() => {console.log("Cadeau appuyé"), props.navigation.navigate("DetailCadeau")}} style={style.itemelement}>
         <Image
           style={[style.itemphoto, style.flexelement]}
-          source={require("../assets/photo.png")}
+          source={require("../assets/gift.png")}
         />
         <Text style={[style.itemtitle, style.flexelement]}>{title}</Text>
       </Pressable>
-      <Pressable onPress={() => {console.log("Ajouter appuyé"), props.navigation.navigate("PersonnesGroupe")}}>
-        {/* <Image
-          style={[style.confirm, style.flexelement]}
-          source={require("../assets/confirm.svg")}
-        />*/}
-        <FontAwesome name="check" size={35} style={style.flexelement} />
+      <Pressable onPress={() => {console.log("Supprimer appuyé")}}>
+        <FontAwesome name="times" size={35} style={style.flexelement} />
       </Pressable>
+      <TextInput
+          placeholder="XX€"
+          style={[style.champParticipation, style.flexelement]}
+          autoCapitalize="none"
+          keyboardType="numeric"
+          onSubmitEditing={() => {console.log("Participation saisie")}}
+      />
+      <Text style={[style.itemtitle, style.flexelement]}>XX€</Text>
     </View>
   );
 
   return (
     <View style={style.view}>
-      <TextInput
-          placeholder="Rechercher"
-          style={style.champRecherche}
-          autoCapitalize="none"
+      <Image style={style.photo}
+          source={require("../assets/photo.png")}
       />
+      <Text style={{fontSize:0, fontWeight:"normal", color:"transparent"}}></Text>
+      <Text style={style.title}>Dupond Dupond</Text>
+      <View style={styles.button}>
+          <TouchableOpacity
+              style={styles.sign}
+              onPress={() => { props.navigation.navigate('Profil') }}
+          >
+              <LinearGradient
+                  colors={['#FF8787', '#f39a9a']}
+                  style={styles.sign}
+              >
+                  <Text style={[styles.textSign, { color: '#fff' }]}>Partager sa liste</Text>
+              </LinearGradient>
+          </TouchableOpacity>
+      </View>
       <SectionList
         sections={DATA}
         keyExtractor={(item, index) => item + index}
@@ -55,24 +72,14 @@ const AjoutMembre = (props) => {
           <Text style={style.header}>{title}</Text>
         )}
       />
-      <View style={styles.button}>
-          <TouchableOpacity
-              style={styles.sign}
-              onPress={() => { console.log("Ajouter un membre inactif appuyé"), props.navigation.navigate("AjoutMembreInactif") }}
-          >
-              <LinearGradient
-                  colors={['#FF8787', '#f39a9a']}
-                  style={styles.sign}
-              >
-                  <Text style={[styles.textSign, { color: '#fff' }]}>Ajouter un membre inactif</Text>
-              </LinearGradient>
-          </TouchableOpacity>
-      </View>
+      <Pressable style={style.btnValider} onPress={() => {console.log("Valider appuyé"), props.navigation.navigate("AjoutCadeau")}}>
+        <FontAwesome name="plus-circle" size={60} />
+      </Pressable>
     </View>
   )
 }
 
-export default AjoutMembre;
+export default ProfilMembre;
 
 const style = {
   view: {
@@ -80,6 +87,16 @@ const style = {
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#FEFCF3"
+  },
+  title: {
+    color: "#D74848",
+    fontSize: 30
+  },
+  photo: {
+    width: 150,
+    height: 150,
+    marginTop: 30,
+    marginBottom: 20
   },
   item: {
     backgroundColor: "transparent",
@@ -100,10 +117,6 @@ const style = {
     width: 70,
     height: 70
   },
-  /*confirm: {
-    width: 39,
-    height: 39
-  },*/
   itemelement: {
     backgroundColor: "transparent",
     flexDirection: "row",
@@ -132,10 +145,16 @@ const style = {
     width: "100%",
     textAlign: "center"
   },
-  champRecherche: {
+  description: {
+    color: "#D74848",
+    fontSize: 20,
+    margin: 20,
+    width: "60%"
+  },
+  champParticipation: {
     marginVertical: 20,
     padding: 10,
-    width: "70%",
+    width: "20%",
     borderWidth: 1,
     borderColor: "#D74848",
     borderRadius: 10

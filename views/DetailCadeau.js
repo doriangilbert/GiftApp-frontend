@@ -21,7 +21,7 @@ const AjoutCadeau = (props) => {
       <Text style={style.text}>https://www.amazon.fr/casquette</Text>
       <Text style={style.text}>XX€</Text>
       <Text style={style.text}>"Superbe casquette de capitaine"</Text>
-      <Pressable style={style.btnValider} onPress={() => {console.log("Valider appuyé"), props.navigation.navigate("ProfilMembre")}}>
+      <Pressable style={style.btnValider} onPress={() => {console.log("Valider appuyé"), props.navigation.navigate("ListeCadeau")}}>
         <FontAwesome name="check" size={60} />
       </Pressable>
     </View>
@@ -39,7 +39,7 @@ const style = {
   },
   photo: {
     width: 150,
-    height: 150, 
+    height: 150,
     marginBottom: 20
   },
   title: {

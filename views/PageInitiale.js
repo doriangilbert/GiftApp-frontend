@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     textSign: {
         fontSize: 18,
         fontWeight: 'bold',
-        width: "100%",
-        textAlign: "center"
+        width: '100%',
+        textAlign: 'center'
     }
 });

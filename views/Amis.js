@@ -1,7 +1,7 @@
 //core
 
-import { Image, Pressable, SectionList, Text, View } from 'react-native';
-
+import { Image, Pressable, SectionList, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons';
 import React from 'react';
 
@@ -23,7 +23,7 @@ const Amis = (props) => {
       data: ["Dupond Dupont", "Dupond Dupont", "Dupond Dupont", "Dupond Dupont", "Dupond Dupont", "Dupond Dupont"]
     }
   ];
-  
+
   const Item1 = ({ title }) => (
     <View style={style.item}>
       <Pressable onPress={() => {console.log("Profil appuyé"), props.navigation.navigate("ProfilAmi")}} style={style.itemelement}>
@@ -49,7 +49,7 @@ const Amis = (props) => {
       </Pressable>
     </View>
   );
-  
+
   const Item = ({ title }) => (
     <View style={style.item}>
       <Pressable onPress={() => {console.log("Profil appuyé"), props.navigation.navigate("ProfilAmi")}} style={style.itemelement}>
@@ -64,9 +64,19 @@ const Amis = (props) => {
 
   return (
     <View style={style.view}>
-      <Pressable onPress={() => {console.log("Ajouter un ami appuyé"), props.navigation.navigate("AjoutAmis")}} style={style.bouton}>
-        <Text style={style.txtBouton}>{"Ajouter un ami"}</Text>
-      </Pressable>
+        <View style={styles.button}>
+            <TouchableOpacity
+                style={styles.sign}
+                onPress={() => { console.log("Ajouter un ami appuyé"), props.navigation.navigate("AjoutAmis") }}
+            >
+                <LinearGradient
+                    colors={['#FF8787', '#f39a9a']}
+                    style={styles.sign}
+                >
+                    <Text style={[styles.textSign, { color: '#fff' }]}>Ajouter un ami</Text>
+                </LinearGradient>
+            </TouchableOpacity>
+        </View>
       <SectionList
         sections={DATA}
         keyExtractor={(item, index) => item + index}
@@ -151,3 +161,26 @@ const style = {
     textAlign: "center"
   }
 };
+
+const styles = StyleSheet.create({
+    button: {
+        alignItems: 'center',
+        width: "50%",
+        borderRadius: 10,
+        marginBottom: 10,
+        marginTop: 15
+    },
+    sign: {
+        width: '100%',
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10
+    },
+    textSign: {
+        fontSize: 17,
+        fontWeight: 'bold',
+        width: '100%',
+        textAlign: 'center'
+    }
+});

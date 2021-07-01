@@ -1,7 +1,7 @@
 //core
 
-import { Image, Pressable, SectionList, Text, View } from 'react-native';
-
+import { Image, Pressable, SectionList, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons';
 import React from 'react';
 
@@ -23,7 +23,7 @@ const MesGroupes = (props) => {
       data: ["Groupe", "Groupe", "Groupe", "Groupe", "Groupe", "Groupe"]
     }
   ];
-  
+
   const Item1 = ({ title }) => (
     <View style={style.item}>
       <Pressable onPress={() => {console.log("Profil appuyé"), props.navigation.navigate("Groupe")}} style={style.itemelement}>
@@ -49,7 +49,7 @@ const MesGroupes = (props) => {
       </Pressable>
     </View>
   );
-  
+
   const Item = ({ title }) => (
     <View style={style.item}>
       <Pressable onPress={() => {console.log("Profil appuyé"), props.navigation.navigate("Groupe")}} style={style.itemelement}>
@@ -64,9 +64,20 @@ const MesGroupes = (props) => {
 
   return (
     <View style={style.view}>
-      <Pressable onPress={() => {console.log("Créer un groupe appuyé"), props.navigation.navigate("CreationGroupe")}} style={style.bouton}>
-        <Text style={style.txtBouton}>{"Créer un groupe"}</Text>
-      </Pressable>
+        <View style={styles.button}>
+            <TouchableOpacity
+                style={styles.sign}
+                onPress={() => { console.log("Créer un groupe appuyé"), props.navigation.navigate("CreationGroupe") }}
+            >
+                <LinearGradient
+                    colors={['#FF8787', '#f39a9a']}
+                    style={styles.sign}
+                >
+                    <Text style={[styles.textSign, { color: '#fff' }]}>Créer un groupe</Text>
+                </LinearGradient>
+            </TouchableOpacity>
+        </View>
+
       <SectionList
         sections={DATA}
         keyExtractor={(item, index) => item + index}
@@ -151,3 +162,26 @@ const style = {
     textAlign: "center"
   }
 };
+
+const styles = StyleSheet.create({
+    button: {
+        alignItems: 'center',
+        width: "50%",
+        borderRadius: 10,
+        marginBottom: 10,
+        marginTop: 15
+    },
+    sign: {
+        width: '100%',
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10
+    },
+    textSign: {
+        fontSize: 17,
+        fontWeight: 'bold',
+        width: '100%',
+        textAlign: 'center'
+    }
+});

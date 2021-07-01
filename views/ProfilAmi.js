@@ -1,7 +1,7 @@
 //core
 
-import { Image, Pressable, Text, View } from 'react-native';
-
+import { Image, Pressable, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 
 //style
@@ -18,9 +18,19 @@ const ProfilAmi = (props) => {
       <Text style={{fontSize:0, fontWeight:"normal", color:"transparent"}}></Text>
       <Text style={style.title}>Capitaine Haddock</Text>
       <Text style={style.description}>“Tonnerre de Brest ! Mille millions de mille sabords !”</Text>
-      <Pressable onPress={() => {console.log("Supprimer de mes amis appuyé"), props.navigation.navigate("Amis")}} style={style.bouton}>
-        <Text style={style.txtBouton}>{"Supprimer de mes amis"}</Text>
-      </Pressable>
+      <View style={styles.button}>
+          <TouchableOpacity
+              style={styles.sign}
+              onPress={() => { console.log("Supprimer de mes amis appuyé"), props.navigation.navigate("Amis") }}
+          >
+              <LinearGradient
+                  colors={['#FF8787', '#f39a9a']}
+                  style={styles.sign}
+              >
+                  <Text style={[styles.textSign, { color: '#fff' }]}>Supprimer de mes amis</Text>
+              </LinearGradient>
+          </TouchableOpacity>
+      </View>
     </View>
   )
 }
@@ -41,7 +51,7 @@ const style = {
   },
   photo: {
     width: 150,
-    height: 150, 
+    height: 150,
     marginTop: 30,
     marginBottom: 20
   },
@@ -72,3 +82,26 @@ const style = {
     width: "60%"
   }
 };
+
+const styles = StyleSheet.create({
+    button: {
+        alignItems: 'center',
+        width: "50%",
+        borderRadius: 10,
+        marginBottom: 10,
+        marginTop: 15
+    },
+    sign: {
+        width: '100%',
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10
+    },
+    textSign: {
+        fontSize: 17,
+        fontWeight: 'bold',
+        width: '100%',
+        textAlign: 'center'
+    }
+});

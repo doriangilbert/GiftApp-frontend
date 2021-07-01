@@ -295,7 +295,6 @@ export default Inscription;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
         backgroundColor: '#FF8787A2',
     },
     header: {
@@ -366,7 +365,7 @@ const styles = StyleSheet.create({
     textSign: {
         fontSize: 18,
         fontWeight: 'bold',
-        width: "100%",
-        textAlign: "center"
+        width: '100%',
+        textAlign: 'center'
     }
 });
