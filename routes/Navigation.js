@@ -14,6 +14,7 @@ import AjoutMembreInactif from '../views/AjoutMembreInactif';
 import Amis from '../views/Amis'
 import Connexion from '../views/Connexion';
 import CreationGroupe from '../views/CreationGroupe';
+import CreationListe from '../views/CreationListe';
 import DetailCadeau from '../views/DetailCadeau';
 import EditProfil from '../views/EditProfil';
 import { Entypo } from '@expo/vector-icons';
@@ -21,15 +22,17 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import Groupe from '../views/Groupe';
 import Inscription from '../views/Inscription';
 import { LinearGradient } from 'expo-linear-gradient';
+import ListeCadeau from '../views/ListeCadeau';
+import Listes from '../views/Listes';
 import { MaterialIcons } from '@expo/vector-icons';
 import MesGroupes from '../views/MesGroupes'
 import PageInitiale from '../views/PageInitiale';
 import Parametres from '../views/Parametres';
+import PartageListe from '../views/PartageListe';
 import PersonnesGroupe from '../views/PersonnesGroupe';
 import Profil from '../views/Profil'
 import ProfilAmi from '../views/ProfilAmi';
 import ProfilMembre from '../views/ProfilMembre';
-import ListeCadeau from '../views/ListeCadeau';
 import { View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { rose_main } from '../Style';
@@ -117,8 +120,23 @@ export const AccueilStackScreen = () => {
             />
 
             <AccueilStack.Screen
+                name="Listes"
+                component={Listes}
+            />
+
+            <AccueilStack.Screen
+                name="CreationListe"
+                component={CreationListe}
+            />
+
+            <AccueilStack.Screen
                 name="ListeCadeau"
                 component={ListeCadeau}
+            />
+
+            <AccueilStack.Screen
+                name="PartageListe"
+                component={PartageListe}
             />
 
             <AccueilStack.Screen

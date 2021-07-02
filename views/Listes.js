@@ -1,23 +1,23 @@
-import { Image, Pressable, SectionList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, Pressable, SectionList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import { FontAwesome } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import style from '../Style';
 
-const ProfilMembre = (props) => {
+const Listes = (props) => {
 
   const DATA = [
     {
       index: 0,
-      title: "Liste de cadeaux :",
-      data: ["Cadeau", "Cadeau", "Cadeau", "Cadeau", "Cadeau", "Cadeau"]
+      title: "Listes de cadeaux :",
+      data: ["Liste", "Liste", "Liste", "Liste", "Liste", "Liste"]
     }
   ];
 
   const Item = ({ title }) => (
     <View style={style.item}>
-      <Pressable onPress={() => {console.log("Cadeau appuyé"), props.navigation.navigate("DetailCadeau")}} style={style.itemelement}>
+      <Pressable onPress={() => {console.log("Liste appuyé"), props.navigation.navigate("ListeCadeau")}} style={style.itemelement}>
         <Image
           style={[style.itemphoto, style.flexelement]}
           source={require("../assets/gift.png")}
@@ -25,34 +25,31 @@ const ProfilMembre = (props) => {
         <Text style={[style.itemtitle, style.flexelement]}>{title}</Text>
       </Pressable>
       <Pressable onPress={() => {console.log("Supprimer appuyé")}}>
+        {/* <Image
+          style={[style.cancel, style.flexelement]}
+          source={require("../assets/cancel.svg")}
+        /> */}
         <FontAwesome name="times" size={35} style={style.flexelement} />
       </Pressable>
-      <TextInput
-          placeholder="XX€"
-          style={[style.champParticipation, style.flexelement]}
-          autoCapitalize="none"
-          keyboardType="numeric"
-          onSubmitEditing={() => {console.log("Participation saisie")}}
-      />
-      <Text style={[style.itemtitle, style.flexelement]}>XX€</Text>
     </View>
   );
 
   return (
     <View style={style.view}>
-      <View style={style.button}>
-          <TouchableOpacity
-              style={style.sign}
-              onPress={() => { props.navigation.navigate('PartageListe') }}
-          >
-              <LinearGradient
-                  colors={['#FF8787', '#f39a9a']}
-                  style={style.sign}
-              >
-                  <Text style={[style.textSign, { color: '#fff' }]}>Partager sa liste</Text>
-              </LinearGradient>
-          </TouchableOpacity>
-      </View>
+        <View style={style.button}>
+            <TouchableOpacity
+                style={style.sign}
+                onPress={() => { console.log("Nouvelle liste appuyé"), props.navigation.navigate("CreationListe") }}
+            >
+                <LinearGradient
+                    colors={['#FF8787', '#f39a9a']}
+                    style={style.sign}
+                >
+                    <Text style={[style.textSign, { color: '#fff' }]}>Nouvelle liste</Text>
+                </LinearGradient>
+            </TouchableOpacity>
+        </View>
+
       <SectionList
         sections={DATA}
         keyExtractor={(item, index) => item + index}
@@ -63,14 +60,11 @@ const ProfilMembre = (props) => {
           <Text style={style.header}>{title}</Text>
         )}
       />
-      <Pressable style={style.btnValider} onPress={() => {console.log("Valider appuyé"), props.navigation.navigate("AjoutCadeau")}}>
-        <FontAwesome name="plus-circle" size={60} />
-      </Pressable>
     </View>
   )
 }
 
-export default ProfilMembre;
+export default Listes;
 
 {/*
 const style = {
@@ -79,16 +73,6 @@ const style = {
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#FEFCF3"
-  },
-  title: {
-    color: "#D74848",
-    fontSize: 30
-  },
-  mainphotoprofil: {
-    width: 150,
-    height: 150,
-    marginTop: 30,
-    marginBottom: 20
   },
   item: {
     backgroundColor: "transparent",
@@ -108,6 +92,10 @@ const style = {
   itemphoto: {
     width: 70,
     height: 70
+  },
+  cancel: {
+    width: 32,
+    height: 32
   },
   itemelement: {
     backgroundColor: "transparent",
@@ -136,20 +124,6 @@ const style = {
     color: "#FFFFFF",
     width: "100%",
     textAlign: "center"
-  },
-  description: {
-    color: "#D74848",
-    fontSize: 20,
-    margin: 20,
-    width: "60%"
-  },
-  champParticipation: {
-    marginVertical: 20,
-    padding: 10,
-    width: "20%",
-    borderWidth: 1,
-    borderColor: "#D74848",
-    borderRadius: 10
   }
 };
 

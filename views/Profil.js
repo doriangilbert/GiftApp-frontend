@@ -52,14 +52,14 @@ export default class Profil extends React.Component {
                     <TouchableOpacity
                         style={[style.sign]}
                         onPress={() => {
-                            this.props.navigation.navigate('ListeCadeau')
+                            this.props.navigation.navigate('Listes')
                         }}
                     >
                         <LinearGradient
                             colors={['#FF8787', '#f39a9a']}
                             style={style.sign}
                         >
-                            <Text style={[style.textSign, { color: '#fff' }]}>Consulter liste de cadeaux</Text>
+                            <Text style={[style.textSign, { color: '#fff' }]}>Consulter mes listes</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>
