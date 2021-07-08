@@ -1,3 +1,5 @@
+//Importation de React, des composants associés et du style (style récupéré dans le fichier global de style et rendu avec l'attribut "style" d'un composant)
+
 import { Button, Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -18,15 +20,24 @@ export default class Profil extends React.Component {
     }
 
     render() {
+        //Fonction return permettant le rendu de la page, il contient le squelette de la page
         return (
             <View style={style.view}>
-
+                {/* 
+                    Composant "StatusBar" permettant de personnaliser le style de la barre supérieure du téléphone
+                */}
                 <StatusBar backgroundColor='#FF8787A2' barStyle="light-content" />
+                {/* 
+                    Composant "Image" permettant de rendre une image (l'attribut source contient l'emplacement de l'image) 
+                    Photo de profil
+                */}
                 <Image style={style.mainphotoprofil}
                     source={require("../assets/photo.png")}
                 />
 
-
+                {/* 
+                    Composant "Text" permettant de rendre un texte
+                */}
                 <Text style={style.title}> Dupond Dupond</Text>
 
 
@@ -34,16 +45,28 @@ export default class Profil extends React.Component {
 
 
                 <Text style={style.text}>duponddupont@gmail.com</Text>
-
+                
+                {/* 
+                    Composant "View" caractérisant un bouton
+                */}
                 <View style={style.button}>
+                    {/* 
+                        Composant "TouchableOpacity" similaire au composant "Pressable" qui permet de rendre cliquable les éléments qu'il contient
+                    */}
                     <TouchableOpacity
                         style={style.sign}
                         onPress={() => { this.props.navigation.navigate('EditProfil') }}
-                    >
+                    >   
+                        {/* 
+                            Composant "LinearGradient" permettant de faire un dégradé au bouton
+                        */}
                         <LinearGradient
                             colors={['#FF8787', '#f39a9a']}
                             style={style.sign}
                         >
+                            {/* 
+                                Composant "Text" qui représente le texte du bouton
+                            */}
                             <Text style={[style.textSign, { color: '#fff' }]}>Editer mon profil</Text>
                         </LinearGradient>
                     </TouchableOpacity>

@@ -1,3 +1,5 @@
+//Importation de React, des composants associés et du style (style récupéré dans le fichier global de style et rendu avec l'attribut "style" d'un composant)
+
 import { Image, Pressable, SectionList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import { FontAwesome } from '@expo/vector-icons';
@@ -6,7 +8,7 @@ import React from 'react';
 import style from '../Style';
 
 const ProfilMembre = (props) => {
-
+  /*
   const DATA = [
     {
       index: 0,
@@ -37,13 +39,22 @@ const ProfilMembre = (props) => {
       <Text style={[style.itemtitle, style.flexelement]}>XX€</Text>
     </View>
   );
+  */
 
+  //Fonction return permettant le rendu de la page, il contient le squelette de la page
   return (
     <View style={style.view}>
+      {/* 
+          Composant "Image" permettant de rendre une image (l'attribut source contient l'emplacement de l'image) 
+          Photo de profil
+      */}
       <Image style={style.mainphotoprofil}
           source={require("../assets/photo.png")}
       />
       <Text style={{fontSize:0, fontWeight:"normal", color:"transparent"}}></Text>
+      {/* 
+          Composant "Text" permettant de rendre un texte
+      */}
       <Text style={style.title}>Dupond Dupond</Text>
     </View>
   )
