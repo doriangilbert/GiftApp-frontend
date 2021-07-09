@@ -1,14 +1,15 @@
 //core
-import React from 'react';
 
-import { Text, View, Button, Image, StatusBar, StyleSheet, TouchableOpacity } from 'react-native';
+import { Button, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { BottomSocial } from '../Components/BottomSocial';
 import { LinearGradient } from 'expo-linear-gradient';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import React from 'react';
+import style from '../Style';
 
 //style
-import style from '../Style';
+
 
 
 export default class PageInitiale extends React.Component {
@@ -23,33 +24,33 @@ export default class PageInitiale extends React.Component {
     }
     render() {
         return (
-            <View style={style.view}>
+            <View style={style.view_top}>
                 <StatusBar backgroundColor='#FF8787A2' barStyle="light-content" />
                 <Image source={require("../assets/logo_large.png")} style={style.logo} />
 
-                <View style={styles.button}>
+                <View style={style.button}>
                     <TouchableOpacity
-                        style={styles.sign}
+                        style={style.sign}
                         onPress={() => { this.props.navigation.navigate('Connexion') }}
                     >
                         <LinearGradient
                             colors={['#FF8787', '#f39a9a']}
-                            style={styles.sign}
+                            style={style.sign}
                         >
-                            <Text style={[styles.textSign, { color: '#fff' }]}>Connexion</Text>
+                            <Text style={[style.textSign, { color: '#fff' }]}>Connexion</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.button}>
+                <View style={style.button}>
                     <TouchableOpacity
-                        style={styles.sign}
+                        style={style.sign}
                         onPress={() => { this.props.navigation.navigate('Inscription') }}
                     >
                         <LinearGradient
                             colors={['#FF8787', '#f39a9a']}
-                            style={styles.sign}
+                            style={style.sign}
                         >
-                            <Text style={[styles.textSign, { color: '#fff' }]}>Inscription</Text>
+                            <Text style={[style.textSign, { color: '#fff' }]}>Inscription</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>
@@ -61,6 +62,7 @@ export default class PageInitiale extends React.Component {
     }
 }
 
+/*
 const styles = StyleSheet.create({
     button: {
         alignItems: 'center',
@@ -83,3 +85,4 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     }
 });
+*/

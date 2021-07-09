@@ -47,7 +47,7 @@ const GlobalStack = createStackNavigator();
 
 export const GlobalNav = () => {
     return (
-        <GlobalStack.Navigator initialRouteName="BottomTabs" screenOptions={{ headerShown: false }}>
+        <GlobalStack.Navigator initialRouteName="InitialTabs" screenOptions={{ headerShown: false }}>
             {/* Changer initialRouteName="InitialTabs" en initialRouteName="BottomTabs" pour ignorer la page de connexion */}
             <GlobalStack.Screen
                 name="InitialTabs"

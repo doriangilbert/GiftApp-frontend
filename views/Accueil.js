@@ -12,7 +12,7 @@ import style from '../Style';
 export default function Accueil(props) {
   
     return (
-      <View style={style.view}>
+      <View style={style.view_top}>
         <StatusBar backgroundColor='#FF8787A2' barStyle="light-content" />
         <View style={[{justifyContent:"flex-end",flexDirection:"row"}]}>
           <View style={{flex:1}}></View>

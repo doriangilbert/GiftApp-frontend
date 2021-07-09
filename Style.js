@@ -7,6 +7,12 @@ export default StyleSheet.create({
         justifyContent: "center",
         backgroundColor:"#FFFCF3"
     },
+    view_top: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: "flex-start",
+        backgroundColor:"#FFFCF3"
+    },
     btn_style:{
         width:"40%",
         borderRadius:25,
