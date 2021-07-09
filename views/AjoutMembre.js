@@ -93,7 +93,7 @@ const AjoutMembre = (props) => {
           */}
           <TouchableOpacity
               style={style.sign}
-              onPress={() => { console.log("Ajouter un membre inactif appuyé"), props.navigation.navigate("AjoutMembreInactif") }}
+              onPress={() => { console.log("Membre inactif appuyé"), props.navigation.navigate("AjoutMembreInactif") }}
           >
               {/* 
                   Composant "LinearGradient" permettant de faire un dégradé au bouton
@@ -105,7 +105,7 @@ const AjoutMembre = (props) => {
                   {/* 
                       Composant "Text" qui représente le texte du bouton
                   */}
-                  <Text style={[style.textSign, { color: '#fff' }]}>Ajouter un membre inactif</Text>
+                  <Text style={[style.textSign, { color: '#fff' }]}>Membre inactif</Text>
               </LinearGradient>
           </TouchableOpacity>
       </View>
